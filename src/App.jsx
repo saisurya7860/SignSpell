@@ -8,6 +8,7 @@ import Settings from './Pages/Settings';
 import Docs from './Pages/Docs';
 import VideoInput from './Pages/VideoInput';
 import Sidebar from './Components/Sidebar';
+import Profile from './Pages/Profile';
 
 const router = createHashRouter([
   {
@@ -67,11 +68,20 @@ const router = createHashRouter([
       </>
     ),
   },
+  {
+    path: "/profile",
+    element: (
+      <>
+        <Sidebar />
+        <Profile/>
+      </>
+    ),
+  },
 ]);
 
 const App = () => {
   return (
-    <div className='pb-[1300px] Montserrat'>
+    <div className='pb-[800px] Montserrat'>
       <RouterProvider router={router} />
     </div>
   );

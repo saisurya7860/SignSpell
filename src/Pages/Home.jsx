@@ -16,7 +16,7 @@ const Home = () => {
     <>
         <Sidebar/>
         <Navbar/>
-        <main className='pl-20 md:pl-80 pt-5'>
+        <main className='pl-20 md:pl-70 pt-15'>
             <section className="mt-10 mr-10">
                 {/* Hero Banner */}
                 <div>

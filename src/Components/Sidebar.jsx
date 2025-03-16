@@ -6,7 +6,7 @@ import { FaEarDeaf } from "react-icons/fa6";
 const Sidebar = () => {
   return (
     <>
-        <aside className='fixed flex flex-col justify-between z-50 top-0 bottom-0 left-0 max-w-[260px] min-h-screen pr-2 border-r-2 border-[#dadada]'>
+        <aside className='fixed flex flex-col bg-white justify-between z-50 top-0 bottom-0 left-0 max-w-[260px] min-h-screen pr-2 border-r border-[#dadada]'>
             <div>
                 <div className='mt-4 ml-5 flex items-center gap-1'>
                     <FaEarDeaf className='text-3xl'/>
@@ -16,27 +16,27 @@ const Sidebar = () => {
                 <div className='mt-4 ml-5 flex flex-col gap-3 text-[1.13rem]'>
                     <NavLink to="/"  className={({ isActive }) =>`flex items-center gap-2 p-1.5 rounded-md ${isActive ? 'bg-[#bdf094]' : ''}`}>
                         <FaQuestion />
-                        <p className="text-[#cdcdcd] hidden md:flex">Dashboard</p>
+                        <p className="hidden md:flex">Dashboard</p>
                     </NavLink>
                     <NavLink to="/learnsign"  className={({ isActive }) =>`flex items-center gap-2 p-1.5 rounded-md ${isActive ? 'bg-[#bdf094]' : ''}`}>
                         <FaQuestion />
-                        <p className="text-[#cdcdcd] hidden md:flex">Learn Sign</p>
+                        <p className="hidden md:flex">Learn Sign</p>
                     </NavLink>
                     <NavLink to="/convertsign"  className={({ isActive }) =>`flex items-center gap-2 p-1.5 rounded-md ${isActive ? 'bg-[#bdf094]' : ''}`}>
                         <FaQuestion />
-                        <p className="text-[#cdcdcd] hidden md:flex">Convert</p>
+                        <p className="hidden md:flex">Convert</p>
                     </NavLink>
                     <NavLink to="/docs"  className={({ isActive }) =>`flex items-center gap-2 p-1.5 rounded-md ${isActive ? 'bg-[#bdf094]' : ''}`}>
                         <FaQuestion />
-                        <p className="text-[#cdcdcd] hidden md:flex">Docs</p>
+                        <p className="hidden md:flex">Docs</p>
                     </NavLink>
                     <NavLink to="/videoinput"  className={({ isActive }) =>`flex items-center gap-2 p-1.5 rounded-md ${isActive ? 'bg-[#bdf094]' : ''}`}>
                         <FaQuestion />
-                        <p className="text-[#cdcdcd] hidden md:flex">Video Input</p>
+                        <p className="hidden md:flex">Video Input</p>
                     </NavLink>
                     <NavLink to="/setting"  className={({ isActive }) =>`flex items-center gap-2 p-1.5 rounded-md ${isActive ? 'bg-[#bdf094]' : ''}`}>
                         <FaQuestion />
-                        <p className="text-[#cdcdcd] hidden md:flex">Settings</p>
+                        <p className="hidden md:flex">Settings</p>
                     </NavLink>
                 </div>
             </div>
