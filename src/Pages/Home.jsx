@@ -3,7 +3,7 @@ import Sidebar from '../Components/Sidebar'
 import duo from '../assets/General/duotalk.jpg'
 import grp from '../assets/General/group.jpg'
 import deaftalk from '../assets/General/deafspeak.jpg'
-import homebanner from '../assets/General/sign-banner2.jpg'
+import homebanner from '../assets/General/banner.jpg'
 import Navbar from '../Components/Navbar'
  
 const Home = () => {

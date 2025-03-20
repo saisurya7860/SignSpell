@@ -81,7 +81,7 @@ const router = createHashRouter([
 
 const App = () => {
   return (
-    <div className='pb-[800px] Montserrat'>
+    <div className='pb-[800px] bg-[#f5f7f2] Montserrat'>
       <RouterProvider router={router} />
     </div>
   );
