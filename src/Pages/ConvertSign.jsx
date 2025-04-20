@@ -14,6 +14,8 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 import Slider from 'react-input-slider';
+import Navbar from "../Components/Navbar";
+
 
 const ConvertSign = () => {
   const [text, setText] = useState("");
@@ -156,132 +158,136 @@ const ConvertSign = () => {
   };
 
   return (
-    <div className="min-h-screen pt-15 gap-6 md:pl-70 ">
-  
-      <div className="lg:flex-row mx-auto flex flex-col">
-        {/* Center Column */}
-        <div className="md:w-1/2 mx-auto">
-          <div
-            id="canvas"
-            className="min-w-[300px]  mx-auto h-64 sm:h-80 lg:h-[450px] border rounded shadow  "
-          />
-        </div>
-
-        {/* Right Column */}
-        <div className="max-w-[230px] max-h-[300px] mx-auto  lg:order-2 p-4 rounded-lg">
-          <p className="text-lg font-semibold mb-2">Select Avatar</p>
-          <div className="flex space-x-2">
-            <img
-              src={xbotPic}
-              className="w-20 h-20 cursor-pointer rounded-lg border border-gray-300 hover:border-blue-500"
-              onClick={() => setBot(xbot)}
-              alt="XBOT"
-            />
-            <img
-              src={ybotPic}
-              className="w-20 h-20 cursor-pointer rounded-lg border border-gray-300 hover:border-blue-500"
-              onClick={() => setBot(ybot)}
-              alt="YBOT"
+  <>
+    <Navbar/>
+    <div className="min-h-screen pt-25 gap-6 md:pl-70 ">
+        
+        <div className="lg:flex-row mx-auto flex flex-col">
+          {/* Center Column */}
+          <div className="md:w-1/2 mx-auto">
+            <div
+              id="canvas"
+              className="min-w-[300px]  mx-auto h-64 sm:h-80 lg:h-[450px] border rounded shadow  "
             />
           </div>
 
-          <p className="text-lg font-semibold mt-4">
-            Animation Speed: {Math.round(speed * 100) / 100}
-          </p>
-          <Slider
-            axis="x"
-            xmin={0.05}
-            xmax={0.5}
-            xstep={0.01}
-            x={speed}
-            onChange={({ x }) => setSpeed(x)}
-            styles={sliderStyles}
-            className="w-full"
-          />
+          {/* Right Column */}
+          <div className="max-w-[230px] max-h-[300px] mx-auto  lg:order-2 p-4 rounded-lg">
+            <p className="text-lg font-semibold mb-2">Select Avatar</p>
+            <div className="flex space-x-2">
+              <img
+                src={xbotPic}
+                className="w-20 h-20 cursor-pointer rounded-lg border border-gray-300 hover:border-blue-500"
+                onClick={() => setBot(xbot)}
+                alt="XBOT"
+              />
+              <img
+                src={ybotPic}
+                className="w-20 h-20 cursor-pointer rounded-lg border border-gray-300 hover:border-blue-500"
+                onClick={() => setBot(ybot)}
+                alt="YBOT"
+              />
+            </div>
 
-          <p className="text-lg font-semibold mt-4">
-            Pause Time: {pause} ms
-          </p>
-          <Slider
-            axis="x"
-            xmin={0}
-            xmax={2000}
-            xstep={100}
-            x={pause}
-            onChange={({ x }) => setPause(x)}
-            styles={sliderStyles}
-            className="w-full"
-          />
+            <p className="text-lg font-semibold mt-4">
+              Animation Speed: {Math.round(speed * 100) / 100}
+            </p>
+            <Slider
+              axis="x"
+              xmin={0.05}
+              xmax={0.5}
+              xstep={0.01}
+              x={speed}
+              onChange={({ x }) => setSpeed(x)}
+              styles={sliderStyles}
+              className="w-full"
+            />
+
+            <p className="text-lg font-semibold mt-4">
+              Pause Time: {pause} ms
+            </p>
+            <Slider
+              axis="x"
+              xmin={0}
+              xmax={2000}
+              xstep={100}
+              x={pause}
+              onChange={({ x }) => setPause(x)}
+              styles={sliderStyles}
+              className="w-full"
+            />
+          </div>
+
         </div>
 
-      </div>
+        {/* Left Column */}
+        <div className=" mx-auto mt-8 flex flex-col lg:flex-row pl-6 gap-y-4 gap-x-16">
 
-      {/* Left Column */}
-      <div className=" mx-auto mt-8 flex flex-col lg:flex-row pl-6 gap-y-4 gap-x-16">
+          <div className="w-full lg:w-1/2 space-y-4"> 
+            <div className="pr-6">
+              <label className="block font-semibold mb-4">
+                Speech Recognition:
+                <span className="text-blue-500 "> {listening ? "on" : "off"}</span>
+              </label>
+              <div className="flex gap-4 justify-center md:space-x-14 ">
+                <button
+                  className="bg-[#bdf094] font-semibold rounded w-[100px] h-[38px] lg:w-[300px] md:h-[50px] cursor-pointer"
+                  onClick={() => SpeechRecognition.startListening({ continuous: true, language: 'en-US' })}
+                >Mic On 🎙️</button>
+                <button
+                  className="bg-[#bdf094] font-semibold rounded w-[110px] h-[38px] lg:w-[300px] md:h-[50px] cursor-pointer"
+                  onClick={() => SpeechRecognition.stopListening()}
+                >Mic Off 🔇</button>
+                <button
+                  className="bg-[#4a5565] font-semibold text-white rounded  w-[100px] h-[38px] lg:w-[300px] md:h-[50px] cursor-pointer"
+                  onClick={() => resetTranscript()}
+                >Clear</button>
+              </div>
+              <div className="flex flex-col items-center mt-4">
+                <textarea
+                  ref={textFromAudio} readOnly rows={3}
+                  value={transcript} placeholder="Speech input..."
+                  className="w-full bg-white h-[150px] p-2 border mt-2 rounded"
+                  // className="w-[250px] md:min-w-[340px] h-[150px] lg:min-w-[580px] p-2 border mt-2 rounded"
+                />
 
-        <div className="w-full lg:w-1/2 space-y-4"> 
-          <div className="pr-6">
-            <label className="block font-semibold mb-4">
-              Speech Recognition:
-              <span className="text-blue-500 "> {listening ? "on" : "off"}</span>
-            </label>
-            <div className="flex gap-4 justify-center md:space-x-14 ">
-              <button
-                className="bg-[#bdf094] font-semibold rounded w-[100px] h-[38px] lg:w-[300px] md:h-[50px] cursor-pointer"
-                onClick={() => SpeechRecognition.startListening({ continuous: true, language: 'en-US' })}
-              >Mic On 🎙️</button>
-              <button
-                className="bg-[#bdf094] font-semibold rounded w-[110px] h-[38px] lg:w-[300px] md:h-[50px] cursor-pointer"
-                onClick={() => SpeechRecognition.stopListening()}
-              >Mic Off 🔇</button>
-              <button
-                className="bg-[#4a5565] font-semibold text-white rounded  w-[100px] h-[38px] lg:w-[300px] md:h-[50px] cursor-pointer"
-                onClick={() => resetTranscript()}
-              >Clear</button>
+                <button
+                  onClick={() => sign(textFromAudio)} 
+                  className="w-[200px] mt-2 bg-[#bdf094] font-semibold py-2 rounded cursor-pointer"
+                >Start Animations</button>
+              </div>   
             </div>
-            <div className="flex flex-col items-center mt-4">
-              <textarea
-                ref={textFromAudio} readOnly rows={3}
-                value={transcript} placeholder="Speech input..."
-                className="w-full bg-white h-[150px] p-2 border mt-2 rounded"
-                // className="w-[250px] md:min-w-[340px] h-[150px] lg:min-w-[580px] p-2 border mt-2 rounded"
-              />
 
-              <button
-                onClick={() => sign(textFromAudio)} 
-                className="w-[200px] mt-2 bg-[#bdf094] font-semibold py-2 rounded cursor-pointer"
-              >Start Animations</button>
-            </div>   
-          </div>
-
-          <div className="pr-6" >
-            <label className="block font-semibold">Text Input</label>
-            <div className="flex flex-col items-center">
-              <textarea
-                ref={textFromInput} rows={3}
-                placeholder="Text input..."
-                className="w-full h-[150px] bg-white p-2 border mt-2 rounded"
-                // className="w-[250px] h-[150px] md:min-w-[350px] lg:min-w-[580px] p-2 border mt-2 rounded"
-              />
-              <button
-                onClick={() => sign(textFromInput)}
-                className="w-[200px] mt-2 bg-[#bdf094] font-semibold py-2 rounded cursor-pointer"
-              >Start Animations</button>
+            <div className="pr-6" >
+              <label className="block font-semibold">Text Input</label>
+              <div className="flex flex-col items-center">
+                <textarea
+                  ref={textFromInput} rows={3}
+                  placeholder="Text input..."
+                  className="w-full h-[150px] bg-white p-2 border mt-2 rounded"
+                  // className="w-[250px] h-[150px] md:min-w-[350px] lg:min-w-[580px] p-2 border mt-2 rounded"
+                />
+                <button
+                  onClick={() => sign(textFromInput)}
+                  className="w-[200px] mt-2 bg-[#bdf094] font-semibold py-2 rounded cursor-pointer"
+                >Start Animations</button>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div className="pr-6 md:mt-18 w-full">
-          <div className="w-full">
-            <label className="block font-semibold">Processed Text</label>
-            <textarea readOnly rows={3} value={text} className="bg-white w-full h-[150px] mt-4 p-2 border rounded" />
-            {/* <textarea readOnly rows={3} value={text} className="w-[250px] md:min-w-[350px] lg:min-w-[580px] h-[150px] mt-4 p-2 border rounded" /> */}
+          <div className="pr-6 md:mt-18 w-full">
+            <div className="w-full">
+              <label className="block font-semibold">Processed Text</label>
+              <textarea readOnly rows={3} value={text} className="bg-white w-full h-[150px] mt-4 p-2 border rounded" />
+              {/* <textarea readOnly rows={3} value={text} className="w-[250px] md:min-w-[350px] lg:min-w-[580px] h-[150px] mt-4 p-2 border rounded" /> */}
+            </div>
           </div>
+          
         </div>
         
-      </div>
-      
     </div>
+  </>
+    
   );
 };
 
