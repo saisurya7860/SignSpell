@@ -164,7 +164,7 @@ const ConvertSign = () => {
         
         <div className="lg:flex-row mx-auto flex flex-col">
           {/* Center Column */}
-          <div className="md:w-1/2 mx-auto">
+          <div className="order-2 md:w-1/2 mx-auto lg:order-1">
             <div
               id="canvas"
               className="min-w-[300px]  mx-auto h-64 sm:h-80 lg:h-[450px] border rounded shadow  "
@@ -172,7 +172,7 @@ const ConvertSign = () => {
           </div>
 
           {/* Right Column */}
-          <div className="max-w-[230px] max-h-[300px] mx-auto  lg:order-2 p-4 rounded-lg">
+          <div className="max-w-[230px] order-1 max-h-[300px] mx-auto  lg:order-2 p-4 rounded-lg">
             <p className="text-lg font-semibold mb-2">Select Avatar</p>
             <div className="flex space-x-2">
               <img

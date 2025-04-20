@@ -88,7 +88,7 @@
         <>
         <Sidebar />
         <Navbar />
-        <main className='pl-10 md:pl-70 pt-25'>
+        <main className=' md:pl-70 pt-25'>
             <div className='p-6'>
             <div className=''>
                 <p className='text-4xl font-bold leading-normal animate-bounce'>Welcome to SignSpell Dashboard</p>
