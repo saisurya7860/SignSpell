@@ -1,13 +1,15 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom';
 import { FaQuestion } from "react-icons/fa6";
-import { FaEarDeaf } from "react-icons/fa6";
 import { Link } from 'react-router-dom';
+import sign_spell from '../assets/General/logo.png'
+import { FaTachometerAlt, FaSignLanguage, FaExchangeAlt, FaFileAlt, FaVideo, FaCog } from 'react-icons/fa';
 
 const Sidebar = () => {
     const sidebarData = {   
         routesPath:['/','/learnsign','/convertsign','/docs','/videoinput','/setting'],
-        routesName:['Dashboard','Learn Sign','Convert','Docs','Video Input','Settings']
+        routesName:['Dashboard','Learn Sign','Convert','Docs','Video Input','Settings'],
+        icons:[FaTachometerAlt,FaSignLanguage,FaExchangeAlt,FaFileAlt,FaVideo,FaCog]
     }
   return (
     <>
@@ -15,17 +17,27 @@ const Sidebar = () => {
             <div>
                 <Link to='/'>
                     <div className='mt-4 ml-5 flex items-center gap-1 cursor-pointer'>
-                        <FaEarDeaf className='text-3xl'/>
-                        <div className='hidden md:flex text-2xl font-bold text-[#59872f]'>Echohands</div>
+                        <img src={sign_spell} className='w-[50px] bold'/>
+                        <div className='hidden md:flex text-2xl font-bold text-[#59872f]'>SIGNSPELL</div>
                     </div>
                 </Link>
                 <div className='mt-8 ml-5 flex flex-col gap-3 text-[1.13rem]'>
-                    {sidebarData.routesPath.map((route,index) =>(
+                    {sidebarData.routesPath.map((route,index) =>{
+                        const Icon = sidebarData.icons[index]
+                        return (
+                            <NavLink to={route} key={route} className={({isActive})=> `flex items-center gap-2 p-1.5 rounded-md ${isActive ? 'bg-[#bdf094]' : ''}`}>
+                            <Icon className="text-2xl pr-1" />
+                            <p>{sidebarData.routesName[index]}</p>
+                            </NavLink>
+
+                        )})}
+
+                    {/* {sidebarData.routesPath.map((route,index) =>(
                         <NavLink to={route} key={index} className={({ isActive }) =>`flex items-center gap-2 p-1.5 rounded-md ${isActive ? 'bg-[#bdf094]' : ''}`}>
                             <FaQuestion />
                             <p className="">{sidebarData.routesName[index]}</p>
                         </NavLink>
-                    ))}
+                    ))} */}
                 </div>
             </div>
             

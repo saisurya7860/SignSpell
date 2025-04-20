@@ -29,7 +29,7 @@ function LearnSign() {
       height: 5,
     },
     active: {
-      backgroundColor: "#4286f4",
+      backgroundColor: "#73a049",
     },
     thumb: {
       width: 20,

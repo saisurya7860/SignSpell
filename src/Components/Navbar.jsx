@@ -9,8 +9,6 @@ import { NavLink } from 'react-router-dom';
 import { FaQuestion } from "react-icons/fa6";
 import { IoMdCloseCircle } from "react-icons/io";
 
-
-
 const Navbar = () => {
     const navigate = useNavigate();
     const [openSidebar,setOpenSidebar] = useState(false);
@@ -27,6 +25,7 @@ const Navbar = () => {
             <Link to='/'>
                 <div className='flex items-center gap-1 md:hidden cursor-pointer'>
                     <FaEarDeaf className='text-3xl'/>
+                    <img src="" alt="" />
                     <div className='flex text-2xl font-bold text-[#59872f]'>Echohands</div>
                 </div>
             </Link>

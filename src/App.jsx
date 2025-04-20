@@ -1,6 +1,5 @@
 import { createHashRouter, RouterProvider } from 'react-router-dom';
 import Home from './Pages/Home';
-import Login from './Pages/Login';
 import Register from './Pages/Register';
 import LearnSign from './Pages/LearnSign';
 import ConvertSign from './Pages/ConvertSign';
@@ -14,10 +13,6 @@ const router = createHashRouter([
   {
     path: "/",
     element: <Home />,
-  },
-  {
-    path: "/login",
-    element: <Login />,
   },
   {
     path: "/register",

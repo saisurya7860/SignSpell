@@ -86,16 +86,16 @@ const Register = () => {
     };
 
     return (
-        <div className="bg-cover bg-center" style={{ backgroundImage: `url(${bannerbg})` }}>
+        <div className="bg-cover bg-center " style={{ backgroundImage: `url(${bannerbg})` }}>
             {/* SIGN UP Section */}
             <div className={signup ? "flex items-center justify-center min-h-screen" : "hidden"}>
                 <div className="lg:max-w-[700px] md:max-w-[650px] max-w-full w-full min-h-screen md:flex md:rounded-3xl bg-white items-center justify-between sm:min-h-[500px]">
-                    <div className="flex flex-col items-center justify-center gap-8 bg-indigo-500 lg:min-w-[380px] md:min-w-[320px] min-h-screen md:min-h-[500px] md:rounded-l-3xl md:rounded-r-[70px]">
+                    <div className="flex flex-col items-center justify-center gap-8 bg-[#bdf094] lg:min-w-[380px] md:min-w-[320px] min-h-screen md:min-h-[500px] md:rounded-l-3xl md:rounded-r-[70px]">
                         <div className="lg:text-[2.8rem] text-[2.4rem] text-white font-bold">{loginData.signup.signupTitle}</div>
-                        <div className="text-gray-300 text-md w-[200px] lg:w-[300px] text-center font-semibold">{loginData.signup.txt1}</div>
+                        <div className="text-black text-md w-[200px] lg:w-[300px] text-center font-semibold">{loginData.signup.txt1}</div>
                         <button className="bg-transparent border-2 text-white flex md:hidden py-2 px-4 cursor-pointer rounded-sm font-bold">{loginData.signup.btn1}</button>
                         <button className="bg-transparent border-2 text-white hidden md:flex py-2 px-4 cursor-pointer rounded-sm font-bold" onClick={toggleVisibility}>{loginData.signup.btn3}</button>
-                        <div className="text-sm text-gray-300">{loginData.signup.txt3}</div>
+                        <div className="text-sm text-black">{loginData.signup.txt3}</div>
                         <div className="flex space-x-6">
                             {loginData.sponsers.logos.map((logo, index) => (
                                 <a href={loginData.sponsers.links[index]} target="_blank" rel="noopener noreferrer" key={index}>
@@ -159,7 +159,7 @@ const Register = () => {
                                 />
                             );
                         })}                       
-                        <button className="bg-indigo-500 text-white py-2 px-4 cursor-pointer rounded-sm font-bold">{loginData.signup.btn2}</button>
+                        <button className="bg-[#bdf094]  py-2 px-4 cursor-pointer rounded-sm font-bold">{loginData.signup.btn2}</button>
                         <div className="text-gray-400 text-sm font-semibold">
                             {loginData.signup.txt5}
                             <span className="text-indigo-500 cursor-pointer" onClick={toggleVisibility}> {loginData.signup.txt6}</span>
@@ -172,12 +172,12 @@ const Register = () => {
             <div className={signup ? "hidden" : "flex items-center justify-center min-h-screen"}>
                 <div className="lg:max-w-[700px] md:max-w-[650px] max-w-full w-full min-h-screen md:rounded-3xl bg-white md:flex items-center justify-between sm:min-h-[500px]">
                     {/* Right Section */}
-                    <div className="flex flex-col items-center justify-center gap-8 bg-indigo-500 lg:min-w-[380px] md:min-w-[320px] min-h-screen md:order-2 order-1 md:min-h-[500px] md:rounded-l-[70px] md:rounded-r-3xl">
+                    <div className="flex flex-col items-center justify-center gap-8 bg-[#bdf094] lg:min-w-[380px] md:min-w-[320px] min-h-screen md:order-2 order-1 md:min-h-[500px] md:rounded-l-[70px] md:rounded-r-3xl">
                         <div className="lg:text-[2.8rem] text-[2.4rem] text-white font-bold">{loginData.signin.signInTitle}</div>
-                        <div className="text-gray-400 text-md w-[200px] lg:w-[300px] text-center font-semibold">{loginData.signin.txt6}</div>
+                        <div className="text-black text-md w-[200px] lg:w-[300px] text-center font-semibold">{loginData.signin.txt6}</div>
                         <button className="bg-transparent border-2 text-white py-2 px-4 cursor-pointer md:flex hidden rounded-sm font-bold" onClick={toggleVisibility}>{loginData.signin.btn3}</button>
                         <button className="bg-transparent border-2 text-white py-2 px-4 cursor-pointer md:hidden flex rounded-sm font-bold">{loginData.signin.btn2}</button>
-                        <div className="text-sm text-gray-300">{loginData.signin.txt3}</div>
+                        <div className="text-sm text-black">{loginData.signin.txt3}</div>
                         <div className="flex space-x-6">
                             {loginData.sponsers.logos.map((logo, index) => (
                                 <a href={loginData.sponsers.links[index]} target="_blank" rel="noopener noreferrer" key={index}>
@@ -226,7 +226,7 @@ const Register = () => {
                         })}
                         {signinError && <p className="text-red-500 text-sm">{signinError}</p>}
                         <p className="text-indigo-500 text-md font-semibold cursor-pointer">{loginData.signin.txt2}</p>
-                        <button className="bg-indigo-500 text-white py-2 px-4 cursor-pointer rounded-sm font-bold" onClick={handleSignIn}>{loginData.signin.btn1}</button>
+                        <button className="bg-[#bdf094]  py-2 px-4 cursor-pointer rounded-sm font-bold" onClick={handleSignIn}>{loginData.signin.btn1}</button>
                         <div className="text-gray-400 text-sm font-semibold">
                             {loginData.signin.txt4}
                             <span className="text-indigo-500 cursor-pointer" onClick={toggleVisibility}>{loginData.signin.txt5}</span>
