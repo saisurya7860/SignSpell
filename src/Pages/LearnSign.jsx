@@ -192,7 +192,7 @@ function LearnSign() {
     <div className="min-h-screen pt-15">
       {/* Sidebar (left) */}      
         <div className=" md:pl-70 pt-10 flex flex-col gap-5 lg:flex-row items-center justify-center lg:justify-evenly p-7">
-          <div className="order-2 flex lg:order-1  bg-[#73a049] justify-center items-center p-4">
+          <div className="order-2 flex lg:order-1 rounded-lg outline-4 outline-[#4a5565] justify-center items-center">
             <div id="canvas" ref={canvasRef} className="w-full h-full" />
           </div>
 
@@ -203,13 +203,13 @@ function LearnSign() {
             <div className="flex space-x-2">
               <img
                 src={xbotPic}
-                className="w-20 h-20 cursor-pointer rounded-lg border border-gray-300 hover:border-blue-500"
+                className="w-20 h-20 cursor-pointer rounded-lg  hover:scale-110"
                 onClick={() => setBot(xbot)}
                 alt="XBOT"
               />
               <img
                 src={ybotPic}
-                className="w-20 h-20 cursor-pointer rounded-lg border border-gray-300 hover:border-blue-500"
+                className="w-20 h-20 cursor-pointer rounded-lg  hover:scale-110"
                 onClick={() => setBot(ybot)}
                 alt="YBOT"
               />
@@ -245,9 +245,9 @@ function LearnSign() {
           </div>
         </div>
 
-      <div className=" m-4 md:pl-62 md:m-1 mt-5 flex items-center justify-center">
-        <div className="w-full max-w-[900px] p-4 bg-[#484848] shadow-lg rounded-lg">
-          <h1 className="text-xl text-white font-bold mb-4">Alphabets</h1>
+      <div className=" m-4 md:pl-62 md:m-1 mt-5 flex items-center justify-center ">
+        <div className="w-full max-w-[900px] p-4 bg-[#f3f4f6] border-1 border-[#dadada] shadow-lg rounded-lg">
+          <h1 className="text-xl text-[#364153] font-bold mb-4">Alphabets</h1>
           <div className="grid-cols-8 grid sm:grid-cols-10 md:grid-cols-8  lg:grid-cols-9 gap-2">
             {Array.from({ length: 26 }, (_, i) => (
               <button
@@ -264,7 +264,7 @@ function LearnSign() {
             ))}
           </div>
 
-          <h1 className="text-xl font-bold text-white mb-2">Words</h1>
+          <h1 className="text-xl font-bold text-[#364153] mb-2">Words</h1>
           <div className="grid-cols-4 grid sm:grid-cols-4 gap-2">
             {words.wordList.map((word, i) => (
               <button

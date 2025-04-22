@@ -5,23 +5,26 @@
     // 💾 ResultCard Component
     const ResultCard = ({ title, status, fileSize, updatedAt }) => {
     return (
-        <div className="bg-[#4a5565] text-white rounded-xl p-5 w-full shadow-md hover:shadow-xl transition-all">
+        <div className="bg-[#f3f4f6]  rounded-xl p-5 w-full shadow-md hover:shadow-xl transition-all border-1 border-[#dadada]">
         <div className="flex items-center justify-between">
             <h3 className="text-xl font-semibold capitalize">{title}</h3>
-            <span className={`text-sm px-3 py-1 rounded-full cursor-pointer ${status === 'Completed' ? 'bg-[#6ca933]' : 'bg-yellow-500'}`}>
+            <span className={`text-sm text-white px-3 py-1 rounded-full  ${status === 'Completed' ? 'bg-[#4a5565]' : 'bg-yellow-500'}`}>
             {status}
             </span>
         </div>
-
-        <p className="mt-3 text-sm">1 File</p>
-        <p className="text-sm text-gray-300">{fileSize}</p>
-        <p className="mt-2 text-xs text-gray-400">Updated {updatedAt}</p>
+        
+        <div className='text-[#4a5565] font-semibold'>
+            <p className="mt-3 text-sm">1 File</p>
+            <p className="text-sm">{fileSize}</p>
+            <p className="mt-2 text-xs">Updated {updatedAt}</p>
+        </div>
+        
 
         <div className="mt-5 flex justify-between">
-            <button className="bg-gray-700 hover:bg-gray-600 cursor-pointer text-sm px-4 py-2 rounded-md">
+            <button className="bg-[#aeeb7c]  hover:bg-[#a4db77] font-semibold cursor-pointer text-sm px-4 py-2 rounded-md">
             Preview
             </button>
-            <button className=" bg-[#6ca933] hover:bg-[#9fce79] cursor-pointer text-sm px-4 py-2 rounded-md">
+            <button className=" bg-[#aeeb7c] hover:bg-[#a4db77] font-semibold cursor-pointer text-sm px-4 py-2 rounded-md">
             Download Result
             </button>
         </div>

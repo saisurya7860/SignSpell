@@ -164,10 +164,10 @@ const ConvertSign = () => {
         
         <div className="lg:flex-row mx-auto flex flex-col">
           {/* Center Column */}
-          <div className="order-2 md:w-1/2 mx-auto lg:order-1">
+          <div className="order-2 md:w-1/2 rounded-2xl mx-auto lg:order-1">
             <div
               id="canvas"
-              className="min-w-[300px]  mx-auto h-64 sm:h-80 lg:h-[450px] border rounded shadow  "
+              className="min-w-[300px]  mx-auto h-64 sm:h-80 lg:h-[450px] outline-4 outline-[#4a5565]  rounded-xl "
             />
           </div>
 
@@ -177,13 +177,13 @@ const ConvertSign = () => {
             <div className="flex space-x-2">
               <img
                 src={xbotPic}
-                className="w-20 h-20 cursor-pointer rounded-lg border border-gray-300 hover:border-blue-500"
+                className="w-20 h-20 cursor-pointer rounded-lg border border-gray-300 hover:scale-110"
                 onClick={() => setBot(xbot)}
                 alt="XBOT"
               />
               <img
                 src={ybotPic}
-                className="w-20 h-20 cursor-pointer rounded-lg border border-gray-300 hover:border-blue-500"
+                className="w-20 h-20 cursor-pointer rounded-lg border border-gray-300 hover:scale-110"
                 onClick={() => setBot(ybot)}
                 alt="YBOT"
               />
@@ -225,21 +225,21 @@ const ConvertSign = () => {
 
           <div className="w-full lg:w-1/2 space-y-4"> 
             <div className="pr-6">
-              <label className="block font-semibold mb-4">
+              <label className="block font-semibold mb-4 text-xl">
                 Speech Recognition:
                 <span className="text-blue-500 "> {listening ? "on" : "off"}</span>
               </label>
               <div className="flex gap-4 justify-center md:space-x-14 ">
                 <button
-                  className="bg-[#bdf094] font-semibold rounded w-[100px] h-[38px] lg:w-[300px] md:h-[50px] cursor-pointer"
+                  className="bg-[#aeeb7c] hover:bg-[#a4db77] transition-all  text-lg  font-semibold rounded w-[100px] h-[38px] lg:w-[300px] md:h-[50px] cursor-pointer"
                   onClick={() => SpeechRecognition.startListening({ continuous: true, language: 'en-US' })}
-                >Mic On 🎙️</button>
+                >Mic On</button>
                 <button
-                  className="bg-[#bdf094] font-semibold rounded w-[110px] h-[38px] lg:w-[300px] md:h-[50px] cursor-pointer"
+                  className="bg-[#aeeb7c] hover:bg-[#a4db77] transition-all  text-lg  font-semibold rounded w-[110px] h-[38px] lg:w-[300px] md:h-[50px] cursor-pointer"
                   onClick={() => SpeechRecognition.stopListening()}
-                >Mic Off 🔇</button>
+                >Mic Off</button>
                 <button
-                  className="bg-[#4a5565] font-semibold text-white rounded  w-[100px] h-[38px] lg:w-[300px] md:h-[50px] cursor-pointer"
+                  className="bg-[#4a5565] font-semibold text-white rounded text-lg w-[100px] h-[38px] lg:w-[300px] md:h-[50px] cursor-pointer"
                   onClick={() => resetTranscript()}
                 >Clear</button>
               </div>
@@ -247,29 +247,29 @@ const ConvertSign = () => {
                 <textarea
                   ref={textFromAudio} readOnly rows={3}
                   value={transcript} placeholder="Speech input..."
-                  className="w-full bg-white h-[150px] p-2 border mt-2 rounded"
+                  className="w-full bg-[#f3f4f6] text-[#4a5565] font-semibold h-[150px] p-2 border mt-2 rounded"
                   // className="w-[250px] md:min-w-[340px] h-[150px] lg:min-w-[580px] p-2 border mt-2 rounded"
                 />
 
                 <button
                   onClick={() => sign(textFromAudio)} 
-                  className="w-[200px] mt-2 bg-[#bdf094] font-semibold py-2 rounded cursor-pointer"
+                  className="w-[200px] mt-2 bg-[#aeeb7c]  transition-all text-lg  hover:bg-[#a4db77]  font-semibold py-2 rounded cursor-pointer"
                 >Start Animations</button>
               </div>   
             </div>
 
             <div className="pr-6" >
-              <label className="block font-semibold">Text Input</label>
+              <label className="block font-semibold text-xl">Text Input</label>
               <div className="flex flex-col items-center">
                 <textarea
                   ref={textFromInput} rows={3}
                   placeholder="Text input..."
-                  className="w-full h-[150px] bg-white p-2 border mt-2 rounded"
+                  className="w-full h-[150px] bg-[#f3f4f6] text-[#4a5565] font-semibold p-2 border mt-2 rounded"
                   // className="w-[250px] h-[150px] md:min-w-[350px] lg:min-w-[580px] p-2 border mt-2 rounded"
                 />
                 <button
                   onClick={() => sign(textFromInput)}
-                  className="w-[200px] mt-2 bg-[#bdf094] font-semibold py-2 rounded cursor-pointer"
+                  className="w-[200px] mt-2 text-lg bg-[#aeeb7c]  transition-all hover:bg-[#a4db77]  font-semibold py-2 rounded cursor-pointer"
                 >Start Animations</button>
               </div>
             </div>
@@ -277,8 +277,8 @@ const ConvertSign = () => {
 
           <div className="pr-6 md:mt-18 w-full">
             <div className="w-full">
-              <label className="block font-semibold">Processed Text</label>
-              <textarea readOnly rows={3} value={text} className="bg-white w-full h-[150px] mt-4 p-2 border rounded" />
+              <label className="block font-semibold text-xl">Processed Text</label>
+              <textarea readOnly rows={3} value={text} className="bg-[#f3f4f6] text-[#4a5565] font-semibold w-full h-[150px] mt-4 p-2 border rounded" />
               {/* <textarea readOnly rows={3} value={text} className="w-[250px] md:min-w-[350px] lg:min-w-[580px] h-[150px] mt-4 p-2 border rounded" /> */}
             </div>
           </div>
