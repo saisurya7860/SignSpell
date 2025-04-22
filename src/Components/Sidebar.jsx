@@ -6,11 +6,6 @@ import sign_spell from '../assets/General/logo.png'
 import { FaChartBar, FaSignLanguage, FaExchangeAlt, FaFileAlt, FaCog } from 'react-icons/fa';
 import { FaCameraRetro } from 'react-icons/fa';
 
-
-
-
-
-
 const Sidebar = () => {
     const sidebarData = {   
         routesPath:['/','/learnsign','/convertsign','/docs','/videoinput','/setting'],
@@ -19,12 +14,12 @@ const Sidebar = () => {
     }
   return (
     <>
-        <aside className='fixed hidden md:flex flex-col bg-[#f3f4f6] justify-between z-50 top-0 bottom-0 left-0 max-w-[260px] min-h-screen pr-2 border-r border-[#dadada]'>
+        <aside className='fixed group w-[80px] hover:w-[230px] transition-all duration-300 flex flex-col bg-[#f3f4f6] justify-between z-50 top-0 bottom-0 left-0 min-h-screen pr-2 border-r border-[#dadada]'>
             <div>
                 <Link to='/'>
                     <div className='mt-4 ml-5 flex items-center gap-1 cursor-pointer'>
                         <img src={sign_spell} className='w-[50px] bold'/>
-                        <div className='hidden md:flex text-2xl font-bold text-[#5d892c]'>SignSpell</div>
+                        <div className='hidden group-hover:flex transition-all duration-300 text-2xl font-bold text-[#5d892c]'>SignSpell</div>
                     </div>
                 </Link>
                 <div className='mt-8 ml-5 flex flex-col gap-3 text-[1.13rem]'>
@@ -32,10 +27,10 @@ const Sidebar = () => {
                         const Icon = sidebarData.icons[index]
                         return (
                             <NavLink to={route} key={route}>{({ isActive }) => (
-                                <div className={`flex items-center text-[#364153] gap-2 p-1.5 rounded-md ${isActive ? 'bg-[#bdf094]' : ''}`}>
-                                    <Icon className={`${isActive ? 'text-black' :'text-[#364153]'}`} />
+                                <div className={`flex items-center text-[#364153] gap-2 p-2 rounded-md ${isActive ? 'bg-[#bdf094]' : ''}`}>
+                                    <Icon className={`${isActive ? 'text-black' :'text-[#364153] text-xl'}`} />
                                     {/* <Icon className="text-2xl text-gray-600 pr-1" /> */}
-                                    <p className={`${isActive ? 'text-black font-semibold' : 'text-[#364153]'}`}>{sidebarData.routesName[index]}</p>
+                                    <p className={`${isActive ? 'text-black font-semibold' : 'text-[#364153]'}  hidden group-hover:inline`}>{sidebarData.routesName[index]}</p>
                                 </div>
                             )}
                             </NavLink>

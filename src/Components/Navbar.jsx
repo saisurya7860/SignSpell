@@ -26,8 +26,8 @@ const Navbar = () => {
         icons:[FaChartBar,FaSignLanguage,FaExchangeAlt,FaFileAlt,FaCameraRetro,FaCog]
     }
   return (
-    <div className='md:pl-61'>
-        <section className='flex fixed top-0 right-0 left-0 md:left-60 items-center bg-[#f3f4f6] justify-between z-20 pl-5 p-3 border-b border-gray-300'>
+    <div className=''>
+        <section className='flex fixed top-0 right-0 left-0  items-center bg-[#f3f4f6] justify-between z-20 pl-5 p-3 border-b border-gray-300'>
             <Link to='/'>
                 <div className='flex items-center gap-1 md:hidden cursor-pointer'>
                     <img src={sign_spell} className='w-[50px] bold'/>
