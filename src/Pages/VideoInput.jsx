@@ -5,7 +5,7 @@ const VideoInput = () => {
   return (
     <>
         <Navbar/>
-        <div className='pl-10 md:pl-70 pt-25'>
+        <div className=''>
             Video Input page here
         </div>
     </>

@@ -5,7 +5,7 @@ const Settings = () => {
   return (
     <>
         <Navbar/>
-        <div className='pl-10 md:pl-70 pt-25'>
+        <div className=''>
         Settings page here
         </div>
     </>

@@ -3,10 +3,8 @@ import { FaBell } from 'react-icons/fa'
 import krishna from '../assets/General/krishna.jpg'
 import { useNavigate } from 'react-router-dom'
 import { Link } from 'react-router-dom'
-import { FaEarDeaf } from "react-icons/fa6";
 import { FaBars } from "react-icons/fa6";
 import { NavLink } from 'react-router-dom';
-import { FaQuestion } from "react-icons/fa6";
 import { IoMdCloseCircle } from "react-icons/io";
 import { FaChartBar, FaSignLanguage, FaExchangeAlt, FaFileAlt, FaCog } from 'react-icons/fa';
 import { FaCameraRetro } from 'react-icons/fa';
@@ -27,7 +25,7 @@ const Navbar = () => {
     }
   return (
     <div className=''>
-        <section className='flex fixed top-0 right-0 left-0  items-center bg-[#f3f4f6] justify-between z-20 pl-5 p-3 border-b border-gray-300'>
+        <section className='flex w-full items-center bg-[#f3f4f6] justify-between z-20 p-3 border-b border-gray-300'>
             <Link to='/'>
                 <div className='flex items-center gap-1 md:hidden cursor-pointer'>
                     <img src={sign_spell} className='w-[50px] bold'/>
@@ -72,17 +70,6 @@ const Navbar = () => {
                                     </NavLink>
                             )})}
                         </div>
-                    </div>
-                </div>
-                
-                <div className='min-w-[200px]   relative bg-[#bdf094] h-35 rounded-xl mb-5 ml-5 mr-4 flex md:hidden'>
-                    <div className='w-[58px] h-[58px] rounded-4xl bg-[#fff] absolute -translate-y-[30px] translate-x-[70px] '>
-                        <div className='w-[38px] h-[38px] rounded-3xl bg-[#aed98a] translate-2.5 cursor-pointer'>
-                            <FaQuestion className='translate-x-2 translate-y-2 text-2xl animate-bounce ease-in-out transition-all duration-400'/>
-                        </div>
-                    </div>
-                    <div className=' mt-10 ml-14 text-lg font-semibold'>
-                        <p>Help Center</p>
                     </div>
                 </div>
         </aside>): null}

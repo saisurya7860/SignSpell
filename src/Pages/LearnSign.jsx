@@ -188,17 +188,16 @@ function LearnSign() {
 
   return (
   <>
-    <Navbar/>
-    <div className="min-h-screen pt-15">
+    <div className="flex flex-col space-y-10 p-3">
       {/* Sidebar (left) */}      
-        <div className=" md:pl-70 pt-10 flex flex-col gap-5 lg:flex-row items-center justify-center lg:justify-evenly p-7">
+        <div className="flex flex-col gap-5 lg:flex-row items-center justify-center lg:justify-around ">
           <div className="order-2 flex lg:order-1 rounded-lg outline-4 outline-[#4a5565] justify-center items-center">
             <div id="canvas" ref={canvasRef} className="w-full h-full" />
           </div>
 
           {/* Controls (middle) */}
 
-          <div className="max-w-[230px] max-h-[300px] order-1 lg:order-2 p-4  rounded-lg">
+          <div className="order-1 lg:order-2 p-4 bg-[#f3f4f6] rounded-lg">
             <p className="text-lg font-semibold mb-2">Select Avatar</p>
             <div className="flex space-x-2">
               <img
@@ -245,10 +244,10 @@ function LearnSign() {
           </div>
         </div>
 
-      <div className=" m-4 md:pl-62 md:m-1 mt-5 flex items-center justify-center ">
-        <div className="w-full max-w-[900px] p-4 bg-[#f3f4f6] border-1 border-[#dadada] shadow-lg rounded-lg">
+      <div className="flex items-center">
+        <div className="w-full p-4 bg-[#f3f4f6] border-1 border-[#dadada] shadow rounded-lg">
           <h1 className="text-xl text-[#364153] font-bold mb-4">Alphabets</h1>
-          <div className="grid-cols-8 grid sm:grid-cols-10 md:grid-cols-8  lg:grid-cols-9 gap-2">
+          <div className="grid-cols-8 grid sm:grid-cols-10 md:grid-cols-8 lg:grid-cols-9 gap-2">
             {Array.from({ length: 26 }, (_, i) => (
               <button
                 key={i}

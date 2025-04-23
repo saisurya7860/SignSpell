@@ -4,8 +4,7 @@ import Navbar from '../Components/Navbar'
 const Docs = () => {
   return (
     <>
-        <Navbar/>
-        <div className='pl-10 md:pl-70 pt-25'>
+        <div className=''>
           Docs page here
         </div>
     </>

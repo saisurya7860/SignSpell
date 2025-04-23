@@ -158,135 +158,153 @@ const ConvertSign = () => {
   };
 
   return (
-  <>
-    <Navbar/>
-    <div className="min-h-screen pt-25 gap-6 md:pl-70 ">
-        
-        <div className="lg:flex-row mx-auto flex flex-col">
-          {/* Center Column */}
-          <div className="order-2 md:w-1/2 rounded-2xl mx-auto lg:order-1">
-            <div
-              id="canvas"
-              className="min-w-[300px]  mx-auto h-64 sm:h-80 lg:h-[450px] outline-4 outline-[#4a5565]  rounded-xl "
-            />
+    <div className="p-3">
+      <div className="lg:flex-row  flex flex-col items-center justify-around ">
+        {/* Center Column */}
+        <div className="order-2  md:w-1/2 rounded-2xl  lg:order-1">
+          <div
+            id="canvas"
+            className="w-full max-w-[500px] h-64 sm:h-80 lg:h-[450px] outline-4 outline-[#4a5565] rounded-xl "
+          >
+            
           </div>
-
-          {/* Right Column */}
-          <div className="max-w-[230px] order-1 max-h-[300px] mx-auto  lg:order-2 p-4 rounded-lg">
-            <p className="text-lg font-semibold mb-2">Select Avatar</p>
-            <div className="flex space-x-2">
-              <img
-                src={xbotPic}
-                className="w-20 h-20 cursor-pointer rounded-lg border border-gray-300 hover:scale-110"
-                onClick={() => setBot(xbot)}
-                alt="XBOT"
-              />
-              <img
-                src={ybotPic}
-                className="w-20 h-20 cursor-pointer rounded-lg border border-gray-300 hover:scale-110"
-                onClick={() => setBot(ybot)}
-                alt="YBOT"
-              />
-            </div>
-
-            <p className="text-lg font-semibold mt-4">
-              Animation Speed: {Math.round(speed * 100) / 100}
-            </p>
-            <Slider
-              axis="x"
-              xmin={0.05}
-              xmax={0.5}
-              xstep={0.01}
-              x={speed}
-              onChange={({ x }) => setSpeed(x)}
-              styles={sliderStyles}
-              className="w-full"
-            />
-
-            <p className="text-lg font-semibold mt-4">
-              Pause Time: {pause} ms
-            </p>
-            <Slider
-              axis="x"
-              xmin={0}
-              xmax={2000}
-              xstep={100}
-              x={pause}
-              onChange={({ x }) => setPause(x)}
-              styles={sliderStyles}
-              className="w-full"
-            />
-          </div>
-
         </div>
+
+        {/* Right Column */}
+        <div className="order-1 bg-[#f3f4f6] mb-5  lg:m-0  max-w-300px max-h-[300px] lg:order-2 p-4 rounded-lg">
+          <p className="text-lg font-semibold mb-2">Select Avatar</p>
+          <div className="flex gap-x-2">
+            <img
+              src={xbotPic}
+              className="w-20 h-20 cursor-pointer rounded-lg border border-gray-300 hover:scale-110"
+              onClick={() => setBot(xbot)}
+              alt="XBOT"
+            />
+            <img
+              src={ybotPic}
+              className="w-20 h-20 cursor-pointer rounded-lg border border-gray-300 hover:scale-110"
+              onClick={() => setBot(ybot)}
+              alt="YBOT"
+            />
+          </div>
+
+          <p className="text-lg font-semibold mt-4">
+            Animation Speed: {Math.round(speed * 100) / 100}
+          </p>
+          <Slider
+            axis="x"
+            xmin={0.05}
+            xmax={0.5}
+            xstep={0.01}
+            x={speed}
+            onChange={({ x }) => setSpeed(x)}
+            styles={sliderStyles}
+            className="w-full"
+          />
+
+          <p className="text-lg font-semibold mt-4">
+            Pause Time: {pause} ms
+          </p>
+          <Slider
+            axis="x"
+            xmin={0}
+            xmax={2000}
+            xstep={100}
+            x={pause}
+            onChange={({ x }) => setPause(x)}
+            styles={sliderStyles}
+            className="w-full"
+          />
+        </div>
+      </div>
 
         {/* Left Column */}
-        <div className=" mx-auto mt-8 flex flex-col lg:flex-row pl-6 gap-y-4 gap-x-16">
+      <div className="w-full mt-8  flex flex-col lg:flex-row gap-y-4 lg:space-x-6 p-4">
 
-          <div className="w-full lg:w-1/2 space-y-4"> 
-            <div className="pr-6">
-              <label className="block font-semibold mb-4 text-xl">
-                Speech Recognition:
-                <span className="text-blue-500 "> {listening ? "on" : "off"}</span>
-              </label>
-              <div className="flex gap-4 justify-center md:space-x-14 ">
-                <button
-                  className="bg-[#aeeb7c] hover:bg-[#a4db77] transition-all  text-lg  font-semibold rounded w-[100px] h-[38px] lg:w-[300px] md:h-[50px] cursor-pointer"
-                  onClick={() => SpeechRecognition.startListening({ continuous: true, language: 'en-US' })}
-                >Mic On</button>
-                <button
-                  className="bg-[#aeeb7c] hover:bg-[#a4db77] transition-all  text-lg  font-semibold rounded w-[110px] h-[38px] lg:w-[300px] md:h-[50px] cursor-pointer"
-                  onClick={() => SpeechRecognition.stopListening()}
-                >Mic Off</button>
-                <button
-                  className="bg-[#4a5565] font-semibold text-white rounded text-lg w-[100px] h-[38px] lg:w-[300px] md:h-[50px] cursor-pointer"
-                  onClick={() => resetTranscript()}
-                >Clear</button>
-              </div>
-              <div className="flex flex-col items-center mt-4">
-                <textarea
-                  ref={textFromAudio} readOnly rows={3}
-                  value={transcript} placeholder="Speech input..."
-                  className="w-full bg-[#f3f4f6] text-[#4a5565] font-semibold h-[150px] p-2 border mt-2 rounded"
-                  // className="w-[250px] md:min-w-[340px] h-[150px] lg:min-w-[580px] p-2 border mt-2 rounded"
-                />
+        {/* Left Column: Contains Speech Recognition and Text Input */}
+        <div className="flex flex-col  space-y-4 lg:w-1/2"> {/* Added lg:w-1/2 */}
 
-                <button
-                  onClick={() => sign(textFromAudio)} 
-                  className="w-[200px] mt-2 bg-[#aeeb7c]  transition-all text-lg  hover:bg-[#a4db77]  font-semibold py-2 rounded cursor-pointer"
-                >Start Animations</button>
-              </div>   
+          {/* Speech Recognition Section */}
+          <div className="bg-[#f3f4f6] p-4 rounded shadow border-1 border-[#dadada]"> {/* Added background/padding for visual separation */}
+            <label className="block font-semibold mb-4 text-xl">
+              Speech Recognition:
+              <span className="text-blue-500 "> {listening ? "on" : "off"}</span>
+            </label>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center md:space-x-6 "> {/* Adjusted button layout for smaller screens too */}
+              <button
+                className="bg-[#aeeb7c] hover:bg-[#a4db77] transition-all text-lg font-medium rounded  py-2 px-4 cursor-pointer  flex-1" // Use flex-1 for better button sizing
+                onClick={() => SpeechRecognition.startListening({ continuous: true, language: 'en-US' })}
+              >
+                Mic On
+              </button>
+              <button
+                className="bg-[#aeeb7c] hover:bg-[#a4db77] transition-all text-lg font-medium rounded py-2 px-4 cursor-pointer flex-1" // Use flex-1
+                onClick={() => SpeechRecognition.stopListening()}
+              >
+                Mic Off
+              </button>
+              <button
+                className="bg-[#4a5565] font-semibold text-white rounded text-lg py-2 px-4 cursor-pointer  flex-1" // Use flex-1
+                onClick={() => resetTranscript()}
+              >
+                Clear
+              </button>
             </div>
-
-            <div className="pr-6" >
-              <label className="block font-semibold text-xl">Text Input</label>
-              <div className="flex flex-col items-center">
-                <textarea
-                  ref={textFromInput} rows={3}
-                  placeholder="Text input..."
-                  className="w-full h-[150px] bg-[#f3f4f6] text-[#4a5565] font-semibold p-2 border mt-2 rounded"
-                  // className="w-[250px] h-[150px] md:min-w-[350px] lg:min-w-[580px] p-2 border mt-2 rounded"
-                />
-                <button
-                  onClick={() => sign(textFromInput)}
-                  className="w-[200px] mt-2 text-lg bg-[#aeeb7c]  transition-all hover:bg-[#a4db77]  font-semibold py-2 rounded cursor-pointer"
-                >Start Animations</button>
-              </div>
+            <div className="flex flex-col items-center mt-4">
+              <textarea
+                ref={textFromAudio}
+                readOnly
+                rows={4} // Adjusted rows slightly
+                value={transcript}
+                placeholder="Speech input..."
+                className="w-full bg-white text-[#4a5565] font-semibold p-2 border mt-2 rounded"
+              />
+              <button
+                onClick={() => sign(textFromAudio)}
+                className="w-max mt-4 bg-[#aeeb7c] transition-all text-lg hover:bg-[#a4db77] font-medium py-3 px-4 rounded cursor-pointer" // Added padding
+              >
+                Start Animations
+              </button>
             </div>
           </div>
 
-          <div className="pr-6 md:mt-18 w-full">
-            <div className="w-full">
-              <label className="block font-semibold text-xl">Processed Text</label>
-              <textarea readOnly rows={3} value={text} className="bg-[#f3f4f6] text-[#4a5565] font-semibold w-full h-[150px] mt-4 p-2 border rounded" />
-              {/* <textarea readOnly rows={3} value={text} className="w-[250px] md:min-w-[350px] lg:min-w-[580px] h-[150px] mt-4 p-2 border rounded" /> */}
+          {/* Text Input Section */}
+          <div className=" p-4 rounded shadow bg-[#f3f4f6] border-1 border-[#dadada]"> {/* Added background/padding for visual separation */}
+            <label className="block font-semibold text-xl mb-2">Text Input</label> {/* Added mb-2 */}
+            <div className="flex flex-col items-center">
+              <textarea
+                ref={textFromInput}
+                rows={4} // Adjusted rows slightly
+                placeholder="Text input..."
+                className="w-full bg-white text-[#4a5565] font-semibold p-2 border mt-2 rounded"
+              />
+              <button
+                onClick={() => sign(textFromInput)}
+                className="w-max mt-4 text-lg bg-[#aeeb7c] transition-all hover:bg-[#a4db77] font-semibold py-2 px-4 rounded cursor-pointer" // Added padding
+              >
+                Start Animations
+              </button>
             </div>
           </div>
-          
+
         </div>
+
+        {/* Right Column: Contains Processed Text */}
+          <div className="lg:w-1/2 p-4 rounded shadow bg-[#f3f4f6] border-1 border-[#dadada]"> {/* Added lg:w-1/2 and matching styling */}
+            <div className="w-full h-full flex flex-col"> {/* Make it flex column to push textarea down */}
+              <label className="font-semibold text-xl mb-2">Processed Text</label> {/* Added mb-2 */}
+              <textarea
+                readOnly
+                // rows={3} // Let flex grow handle height or set specific height
+                value={text}
+                placeholder="Processed output..." // Added placeholder
+              className=" bg-white text-[#4a5565] font-semibold w-full p-2 border rounded flex-grow" // Use flex-grow
+            />
+          </div>
+        </div>
+      </div>
         
     </div>
-  </>
     
   );
 };
