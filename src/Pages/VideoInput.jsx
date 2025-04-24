@@ -4,8 +4,7 @@ import Navbar from '../Components/Navbar'
 const VideoInput = () => {
   return (
     <>
-        <Navbar/>
-        <div className=''>
+        <div className='h-screen'>
             Video Input page here
         </div>
     </>

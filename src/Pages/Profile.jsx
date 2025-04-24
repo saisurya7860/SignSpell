@@ -4,8 +4,7 @@ import Navbar from '../Components/Navbar'
 const Profile = () => {
   return (
     <>
-        <Navbar/>
-        <div className=''>
+        <div className='h-screen'>
             UserProfile page
         </div>
     </>

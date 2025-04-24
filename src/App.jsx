@@ -8,7 +8,8 @@ import Settings from './Pages/Settings';
 import Docs from './Pages/Docs';
 import VideoInput from './Pages/VideoInput';
 import Profile from './Pages/Profile';
-
+import { useContext } from 'react';
+import { ThemeContext } from './Context/ThemeContext';
 
 const App = () => {
   return (

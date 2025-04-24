@@ -12,7 +12,6 @@ import { defaultPose } from "../Animations/defaultPose";
 
 import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
-import Navbar from "../Components/Navbar";
 
 function LearnSign() {
   const [bot, setBot] = useState(ybot);
@@ -191,14 +190,14 @@ function LearnSign() {
     <div className="flex flex-col space-y-10 p-3">
       {/* Sidebar (left) */}      
         <div className="flex flex-col gap-5 lg:flex-row items-center justify-center lg:justify-around ">
-          <div className="order-2 flex lg:order-1 rounded-lg outline-4 outline-[#4a5565] justify-center items-center">
+          <div className="order-2 flex lg:order-1 rounded-lg outline-4 dark:outline-[#666666] outline-[#4a5565] justify-center items-center">
             <div id="canvas" ref={canvasRef} className="w-full h-full" />
           </div>
 
           {/* Controls (middle) */}
 
-          <div className="order-1 lg:order-2 p-4 bg-[#f3f4f6] rounded-lg">
-            <p className="text-lg font-semibold mb-2">Select Avatar</p>
+          <div className="order-1 lg:order-2 p-4 dark:bg-[#3c3c3c] dark:border-[#444444] border-1 border-[#dadada]  bg-[#f3f4f6] rounded-lg">
+            <p className="text-lg font-semibold mb-2 dark:text-[#cccccc]">Select Avatar</p>
             <div className="flex space-x-2">
               <img
                 src={xbotPic}
@@ -214,7 +213,7 @@ function LearnSign() {
               />
             </div>
 
-            <p className="text-lg font-semibold mt-4">
+            <p className="text-lg font-semibold mt-4 dark:text-[#cccccc]">
               Animation Speed: {Math.round(speed * 100) / 100}
             </p>
             <Slider
@@ -228,7 +227,7 @@ function LearnSign() {
               className="w-full"
             />
 
-            <p className="text-lg font-semibold mt-4">
+            <p className="text-lg font-semibold mt-4 dark:text-[#cccccc]">
               Pause Time: {pause} ms
             </p>
             <Slider
@@ -245,13 +244,13 @@ function LearnSign() {
         </div>
 
       <div className="flex items-center">
-        <div className="w-full p-2 bg-[#f3f4f6] border-1 border-[#dadada] shadow rounded-lg">
-          <h1 className="text-xl text-[#364153] font-bold mb-4">Alphabets</h1>
+        <div className="w-full p-2 bg-[#f3f4f6] dark:bg-[#3c3c3c] border-1 border-[#dadada] dark:border-[#444444] shadow rounded-lg">
+          <h1 className="text-xl text-[#364153] dark:text-[#cccccc] font-bold mb-4">Alphabets</h1>
           <div className="grid-cols-8 grid sm:grid-cols-10 md:grid-cols-8 lg:grid-cols-9 gap-2">
             {Array.from({ length: 26 }, (_, i) => (
               <button
                 key={i}
-                className="p-2 bg-[#bdf094] font-bold text-lg rounded cursor-pointer"
+                className="p-2 bg-[#b8f278] dark:hover:bg-[#aedd6a] dark:text-[#1e1e1e] font-bold text-lg rounded cursor-pointer"
                 onClick={() => {
                   if (ref.animations.length === 0) {
                     alphabets[String.fromCharCode(i + 65)](ref);
@@ -263,12 +262,12 @@ function LearnSign() {
             ))}
           </div>
 
-          <h1 className="text-xl font-bold text-[#364153] mb-2">Words</h1>
+          <h1 className="text-xl font-bold text-[#364153] dark:text-[#cccccc] mb-2">Words</h1>
           <div className="grid-cols-4 grid sm:grid-cols-4 gap-1 sm:gap-2">
             {words.wordList.map((word, i) => (
               <button
                 key={i}
-                className="p-2  bg-[#bdf094] font-semibold sm:text-lg cursor-pointer rounded"
+                className="p-2  bg-[#b8f278] dark:text-[#1e1e1e] dark:hover:bg-[#aedd6a] font-semibold sm:text-lg cursor-pointer rounded"
                 onClick={() => {
                   if (ref.animations.length === 0) {
                     words[word](ref);

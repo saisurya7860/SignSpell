@@ -4,7 +4,7 @@ import Navbar from '../Components/Navbar'
 const Docs = () => {
   return (
     <>
-        <div className=''>
+        <div className='h-screen'>
           Docs page here
         </div>
     </>

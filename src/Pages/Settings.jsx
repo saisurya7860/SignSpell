@@ -4,8 +4,7 @@ import Navbar from '../Components/Navbar'
 const Settings = () => {
   return (
     <>
-        <Navbar/>
-        <div className=''>
+        <div className='h-screen'>
         Settings page here
         </div>
     </>

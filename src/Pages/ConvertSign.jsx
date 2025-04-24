@@ -158,21 +158,21 @@ const ConvertSign = () => {
   };
 
   return (
-    <div className="p-3">
+    <div className="h-screen p-3">
       <div className="lg:flex-row  flex flex-col items-center justify-around ">
         {/* Center Column */}
         <div className="order-2  md:w-1/2 rounded-2xl  lg:order-1">
           <div
             id="canvas"
-            className="w-full max-w-[500px] h-64 sm:h-80 lg:h-[450px] outline-4 outline-[#4a5565] rounded-xl "
+            className="w-full max-w-[500px] h-64 sm:h-80 lg:h-[450px] outline-4 outline-[#4a5565] dark:outline-[#666666] rounded-lg "
           >
             
           </div>
         </div>
 
         {/* Right Column */}
-        <div className="order-1 bg-[#f3f4f6] mb-5  lg:m-0  max-w-300px max-h-[300px] lg:order-2 p-4 rounded-lg">
-          <p className="text-lg font-semibold mb-2">Select Avatar</p>
+        <div className="order-1 bg-[#f3f4f6] mb-5 dark:bg-[#333333] dark:border-[#444444] border-[#dadada] border-1 lg:m-0  max-w-300px max-h-[300px] lg:order-2 p-4 rounded-lg">
+          <p className="text-lg font-semibold mb-2 dark:text-[#cccccc]">Select Avatar</p>
           <div className="flex gap-x-2">
             <img
               src={xbotPic}
@@ -188,7 +188,7 @@ const ConvertSign = () => {
             />
           </div>
 
-          <p className="text-lg font-semibold mt-4">
+          <p className="text-lg font-semibold mt-4 dark:text-[#cccccc]">
             Animation Speed: {Math.round(speed * 100) / 100}
           </p>
           <Slider
@@ -202,7 +202,7 @@ const ConvertSign = () => {
             className="w-full"
           />
 
-          <p className="text-lg font-semibold mt-4">
+          <p className="text-lg font-semibold mt-4 dark:text-[#cccccc]">
             Pause Time: {pause} ms
           </p>
           <Slider
@@ -225,26 +225,26 @@ const ConvertSign = () => {
         <div className="flex flex-col  space-y-4 lg:w-1/2"> {/* Added lg:w-1/2 */}
 
           {/* Speech Recognition Section */}
-          <div className="bg-[#f3f4f6] p-4 rounded shadow border-1 border-[#dadada]"> {/* Added background/padding for visual separation */}
-            <label className="block font-semibold mb-4 text-xl">
+          <div className="bg-[#f3f4f6]  dark:bg-[#3c3c3c] dark:border-[#444444] p-4 rounded shadow border-1 border-[#dadada]"> {/* Added background/padding for visual separation */}
+            <label className="block font-semibold mb-4 text-xl dark:text-[#cccccc]">
               Speech Recognition:
-              <span className="text-blue-500 "> {listening ? "on" : "off"}</span>
+              <span className="text-blue-500 dark:text-[#60a5fa] "> {listening ? "on" : "off"}</span>
             </label>
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:space-x-6 "> {/* Adjusted button layout for smaller screens too */}
               <button
-                className="bg-[#aeeb7c] hover:bg-[#a4db77] transition-all text-lg font-medium rounded  py-2 px-4 cursor-pointer  flex-1" // Use flex-1 for better button sizing
+                className="bg-[#b8f278] text-[#1e1e1e] dark:hover:bg-[#aedd6a] hover:bg-[#a4db77] transition-all text-lg font-medium rounded  py-2 px-4 cursor-pointer  flex-1" // Use flex-1 for better button sizing
                 onClick={() => SpeechRecognition.startListening({ continuous: true, language: 'en-US' })}
               >
                 Mic On
               </button>
               <button
-                className="bg-[#aeeb7c] hover:bg-[#a4db77] transition-all text-lg font-medium rounded py-2 px-4 cursor-pointer flex-1" // Use flex-1
+                className="bg-[#b8f278] hover:bg-[#a4db77] dark:hover:bg-[#aedd6a] transition-all text-lg font-medium rounded py-2 px-4 cursor-pointer flex-1" // Use flex-1
                 onClick={() => SpeechRecognition.stopListening()}
               >
                 Mic Off
               </button>
               <button
-                className="bg-[#4a5565] font-semibold text-white rounded text-lg py-2 px-4 cursor-pointer  flex-1" // Use flex-1
+                className="bg-[#4a5565] font-semibold dark:text-[#cccccc] dark:hover:bg-[#5a6575] text-white rounded text-lg py-2 px-4 cursor-pointer  flex-1" // Use flex-1
                 onClick={() => resetTranscript()}
               >
                 Clear
@@ -257,11 +257,11 @@ const ConvertSign = () => {
                 rows={4} // Adjusted rows slightly
                 value={transcript}
                 placeholder="Speech input..."
-                className="w-full bg-white text-[#4a5565] font-semibold p-2 border mt-2 rounded"
+                className="w-full bg-white text-[#4a5565]  dark:border-[#666666] dark:bg-[#444444] dark:text-[#cccccc] font-semibold p-2 border mt-2 rounded"
               />
               <button
                 onClick={() => sign(textFromAudio)}
-                className="w-max mt-4 bg-[#aeeb7c] transition-all text-lg hover:bg-[#a4db77] font-medium py-3 px-4 rounded cursor-pointer" // Added padding
+                className="w-max mt-4 bg-[#b8f278] hover:bg-[#a4db77] dark:hover:bg-[#aedd6a] transition-all text-lg font-medium py-3 px-4 rounded cursor-pointer" // Added padding
               >
                 Start Animations
               </button>
@@ -269,18 +269,18 @@ const ConvertSign = () => {
           </div>
 
           {/* Text Input Section */}
-          <div className=" p-4 rounded shadow bg-[#f3f4f6] border-1 border-[#dadada]"> {/* Added background/padding for visual separation */}
-            <label className="block font-semibold text-xl mb-2">Text Input</label> {/* Added mb-2 */}
+          <div className=" p-4 rounded shadow bg-[#f3f4f6]  dark:bg-[#3c3c3c] dark:border-[#444444] text-[#cccccc]  border-1 border-[#dadada]"> {/* Added background/padding for visual separation */}
+            <label className="block font-semibold text-xl mb-2 text-black dark:text-[#cccccc]">Text Input</label> {/* Added mb-2 */}
             <div className="flex flex-col items-center">
               <textarea
                 ref={textFromInput}
                 rows={4} // Adjusted rows slightly
                 placeholder="Text input..."
-                className="w-full bg-white text-[#4a5565] font-semibold p-2 border mt-2 rounded"
+                className="w-full bg-white text-[#4a5565] dark:bg-[#444444]  dark:border-[#666666] dark:text-[#cccccc] font-semibold p-2 border mt-2 rounded"
               />
               <button
                 onClick={() => sign(textFromInput)}
-                className="w-max mt-4 text-lg bg-[#aeeb7c] transition-all hover:bg-[#a4db77] font-semibold py-2 px-4 rounded cursor-pointer" // Added padding
+                className="w-max mt-4 text-lg bg-[#b8f278] hover:bg-[#a4db77] dark:hover:bg-[#aedd6a] text-black transition-all  font-semibold py-2 px-4 rounded cursor-pointer" // Added padding
               >
                 Start Animations
               </button>
@@ -290,15 +290,15 @@ const ConvertSign = () => {
         </div>
 
         {/* Right Column: Contains Processed Text */}
-          <div className="lg:w-1/2 p-4 rounded shadow bg-[#f3f4f6] border-1 border-[#dadada]"> {/* Added lg:w-1/2 and matching styling */}
+          <div className="lg:w-1/2 p-4 rounded  dark:bg-[#3c3c3c] dark:border-[#444444]  text-[#cccccc] shadow bg-[#f3f4f6] border-1 border-[#dadada]"> {/* Added lg:w-1/2 and matching styling */}
             <div className="w-full h-full flex flex-col"> {/* Make it flex column to push textarea down */}
-              <label className="font-semibold text-xl mb-2">Processed Text</label> {/* Added mb-2 */}
+              <label className="font-semibold text-xl mb-2 text-black dark:text-[#cccccc]">Processed Text</label> {/* Added mb-2 */}
               <textarea
                 readOnly
                 // rows={3} // Let flex grow handle height or set specific height
                 value={text}
                 placeholder="Processed output..." // Added placeholder
-              className=" bg-white text-[#4a5565] font-semibold w-full p-2 border rounded flex-grow" // Use flex-grow
+              className=" bg-white dark:bg-[#444444] dark:text-[#cccccc] text-[#4a5565] dark:border-[#666666] font-semibold w-full p-2 border rounded flex-grow" // Use flex-grow
             />
           </div>
         </div>
