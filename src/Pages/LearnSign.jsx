@@ -245,7 +245,7 @@ function LearnSign() {
         </div>
 
       <div className="flex items-center">
-        <div className="w-full p-4 bg-[#f3f4f6] border-1 border-[#dadada] shadow rounded-lg">
+        <div className="w-full p-2 bg-[#f3f4f6] border-1 border-[#dadada] shadow rounded-lg">
           <h1 className="text-xl text-[#364153] font-bold mb-4">Alphabets</h1>
           <div className="grid-cols-8 grid sm:grid-cols-10 md:grid-cols-8 lg:grid-cols-9 gap-2">
             {Array.from({ length: 26 }, (_, i) => (
@@ -264,7 +264,7 @@ function LearnSign() {
           </div>
 
           <h1 className="text-xl font-bold text-[#364153] mb-2">Words</h1>
-          <div className="grid-cols-4 grid sm:grid-cols-4 gap-2">
+          <div className="grid-cols-4 grid sm:grid-cols-4 gap-1 sm:gap-2">
             {words.wordList.map((word, i) => (
               <button
                 key={i}

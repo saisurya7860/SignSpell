@@ -4,4 +4,30 @@
     60% = [#fff] 30%-[#f3f4f6] 10%-[#bdf094]
 
 
+Body/Page Background: Use --color-dark-primary-bg (#282828).
+Sidebar Background: Use --color-dark-secondary-bg (#333333).
+Sidebar Item Text: Use --color-dark-primary-text (#cccccc).
+Active Sidebar Item Background: Use --color-dark-green-primary (#b8f278).
+Active Sidebar Item Text: Use --color-dark-on-green-text (#1e1e1e).
+Main Content Area Background: Use --color-dark-primary-bg (#282828).
+Card/Section Backgrounds (Avatar, Speech, Text, Processed): Use --color-dark-card-bg (#3c3c3c). Add a subtle border: 1px solid var(--color-dark-border-subtle); (#444444).
+Labels (e.g., "Select Avatar", "Animation Speed"): Use --color-dark-secondary-text (#aaaaaa).
+Alphabet and Word Button Backgrounds: Use --color-dark-green-primary (#b8f278).
+Alphabet and Word Button Text: Use --color-dark-on-green-text (#1e1e1e).
+Alphabet and Word Button Hover: Use background-color: var(--color-dark-green-hover); (#aedd6a).
+"Mic On", "Mic Off", "Start Animations" Button Backgrounds: Use --color-dark-green-primary (#b8f278).
+"Mic On", "Mic Off", "Start Animations" Button Text: Use --color-dark-on-green-text (#1e1e1e).
+"Mic On", "Mic Off", "Start Animations" Button Hover: Use background-color: var(--color-dark-green-hover); (#aedd6a).
+"Clear" Button Background: Use --color-dark-button-secondary-bg (#4a5565).
+"Clear" Button Text: Use --color-dark-primary-text (#cccccc).
+"Clear" Button Hover: Use background-color: var(--color-dark-button-secondary-hover); (#5a6575).
+Canvas Container Outline: Use outline-color: var(--color-dark-outline); (#666666).
+Input Fields/Textareas Background: Use --color-dark-input-bg (#444444).
+Input Fields/Textareas Text: Use --color-dark-primary-text (#cccccc).
+Input Fields/Textareas Border: Use border-color: var(--color-dark-border-input); (#666666).
+Input Fields/Textareas Placeholder Text: Use color: var(--color-dark-placeholder); (#888888).
+Speech Recognition Status Text ("on"/"off"): Use --color-dark-blue-status (#60a5fa).
+Slider Track: Style the track with background-color: var(--color-dark-slider-track); (#555555).
+Slider Active Track: Style the active part with background-color: var(--color-dark-green-active-slider); (#73a049).
+Slider Thumb: Style the thumb with background-color: var(--color-dark-slider-thumb); (#b8f278).
 */
