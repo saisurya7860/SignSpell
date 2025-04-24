@@ -18,7 +18,9 @@ const Sidebar = () => {
             <div className=''>
                 <Link to='/'>
                     <div className='mt-4 flex items-center gap-2 cursor-pointer'>
-                        <img src={sign_spell} className='w-[40px] bold'/>
+                        <div className='dark:bg-white dark:rounded-full'>
+                            <img src={sign_spell} className='w-[40px] h-[40px] bold'/>
+                        </div>
                         <div className='transition-all duration-300 text-2xl font-bold text-[#5d892c]'>SignSpell</div>
                     </div>
                 </Link>
