@@ -262,7 +262,7 @@ const ConvertSign = () => {
               />
               <button
                 onClick={() => sign(textFromAudio)}
-                className="bg-blue-400 text-gray-800 dark:text-gray-800 active:bg-gray-500 hover:bg-gray-500 hover:text-gray-200 dark:active:bg-blue-400 active:translate-y-1 ease-in-out w-max mt-4 transition-all text-lg font-medium py-3 px-4 rounded cursor-pointer" // Added padding
+                className="bg-blue-500 dark:bg-blue-400 text-gray-800 dark:text-gray-800 active:bg-gray-500 hover:bg-gray-500 hover:text-gray-200 dark:active:bg-blue-400 active:translate-y-1 ease-in-out w-max mt-4 transition-all text-lg font-medium py-2 px-4 rounded cursor-pointer" // Added padding
               >
                 Start Animations
               </button>
@@ -281,7 +281,7 @@ const ConvertSign = () => {
               />
               <button
                 onClick={() => sign(textFromInput)}
-                className="bg-blue-400 text-gray-800 dark:text-gray-800 active:bg-gray-500 hover:bg-gray-500 hover:text-gray-200 dark:active:bg-blue-400 active:translate-y-1 ease-in-out w-max mt-4 text-lg  transition-all  font-semibold py-2 px-4 rounded cursor-pointer" // Added padding
+                className="bg-blue-500 dark:bg-blue-400 text-gray-800 dark:text-gray-800 active:bg-gray-500 hover:bg-gray-500 hover:text-gray-200 dark:active:bg-blue-400 active:translate-y-1 ease-in-out w-max mt-4 text-lg  transition-all  font-semibold py-2 px-4 rounded cursor-pointer" // Added padding
               >
                 Start Animations
               </button>

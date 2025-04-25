@@ -4,3 +4,9 @@
 
 /* Custom dark mode variant (ensure your build supports this) */
 @custom-variant dark (&:where(.dark, .dark *));
+
+
+* {
+    scroll-behavior: smooth;
+    list-style: none;
+}
