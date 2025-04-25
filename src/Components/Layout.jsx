@@ -5,7 +5,7 @@ import { Outlet } from 'react-router-dom'
 
 const Layout = () => {
   return (
-    <div className='flex flex-row max-h-screen max-w-screen dark:bg-[#282828]'>
+    <div className='flex flex-row max-h-screen max-w-screen bg-gray-100 dark:bg-gray-900'>
 
       <div>
         <Sidebar/>

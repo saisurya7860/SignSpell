@@ -26,11 +26,11 @@ const Navbar = () => {
     const { darkMode, setDarkMode } = useContext(ThemeContext);
   return (
     <div className=''>
-        <section className='flex w-full items-center bg-[#f3f4f6] dark:bg-[#333333] dark:border-[#444444] justify-between z-20 p-3 border-b border-gray-300'>
+        <section className='flex w-full items-center bg-gray-50 dark:bg-gray-700 border dark:border-gray-600 justify-between z-20 p-3 border-b border-gray-200'>
             <Link to='/'>
                 <div className='flex items-center gap-1 md:hidden cursor-pointer'>
                     <img src={sign_spell} className='w-[50px] bold'/>
-                    <div className='flex text-2xl font-bold text-[#59872f]'>SignSpell</div>
+                    <div className='flex text-2xl font-bold  text-gray-50'>SignSpell</div>
                 </div>
             </Link>
             
@@ -49,7 +49,7 @@ const Navbar = () => {
         </section>
 
         {openSidebar ? (
-            <aside className='fixed flex flex-col md:hidden bg-[#f3f4f6] dark:bg-[#333333] dark:border-[#444444] justify-between z-50 top-0 bottom-0 right-0 w-[230px] h-screen pr-2 border-l  border-[#dadada]'>
+            <aside className='fixed flex flex-col md:hidden bg-gray-50 dark:bg-gray-700 border dark:border-gray-600  justify-between z-50 top-0 bottom-0 right-0 w-[230px] h-screen pr-2 border-l  border-[#dadada]'>
                 <div className='h-full flex flex-col gap-4'>
                     <div className='border-b flex items-center justify-between p-3 dark:border-[#444444]   border-[#dadada]'>
                         <div className='flex items-center gap-3'>
@@ -64,10 +64,10 @@ const Navbar = () => {
                                 const Icon = navSidebarData.icons[index]
                                 return (
                                     <NavLink to={route} key={route}>{({ isActive }) => (
-                                        <div className={`flex items-center text-[#364153] gap-x-4 p-2 w-full rounded-md ${isActive ? 'bg-[#bdf094] dark:bg-[#b8f278]' : ''}`}>
-                                            <Icon className={`${isActive ? 'text-black' :'text-[#364153] dark:text-[#cccccc]  '}text-xl`} />
+                                        <div className={`flex items-center text-[#364153] gap-x-4 p-2 w-full rounded-md ${isActive ? 'bg-blue-500 dark:bg-blue-400' : ''}`}>
+                                            <Icon className={`${isActive ? 'text-neutral-900' :'text-gray-700 dark:text-gray-300'}text-xl`} />
                                             {/* <Icon className="text-2xl text-gray-600 pr-1" /> */}
-                                            <p className={`${isActive ? 'text-black dark:text-[#1e1e1e]' : 'text-[#364153] dark:text-[#cccccc]'}`}>{navSidebarData.routesName[index]}</p>
+                                            <p className={`${isActive ? 'text-white dark:text-[#1e1e1e]' : 'text-gray-800 dark:text-[#cccccc]'}`}>{navSidebarData.routesName[index]}</p>
                                         </div>
                                     )}
                                     </NavLink>

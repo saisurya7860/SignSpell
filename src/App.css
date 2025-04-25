@@ -1,34 +1,71 @@
+/*Light mode:
+   background color 60% bg-gray-100  ,30% bg-gray-50 ,10% bg-blue-500
+   buttons:bg-blue-500 ,hover : bg-blue-900
+   Icons :bg-gray-600 hover:bg-neutral-900
+   text : text-color-gray-800 ,small text: text-gray-100
 
-/* 
-    buttons colors: bg-[#aeeb7c] hover:bg-[#a4db77] text-[#000] font-semibold
-    borders and text for 30%: border-[#dadada] text-[#4a5565]
-    60% = [#fff] 30%-[#f3f4f6] 10%-[#bdf094]
+   Darkmode:
 
+  Alright, let's translate those UI color suggestions into their corresponding Tailwind CSS classes. I'll provide examples for both light and dark modes, keeping the same principles in mind.
 
-Body/Page Background: Use --color-dark-primary-bg (#282828).
-Sidebar Background: Use --color-dark-secondary-bg (#333333).
-Sidebar Item Text: Use --color-dark-primary-text (#cccccc).
-Active Sidebar Item Background: Use --color-dark-green-primary (#b8f278).
-Active Sidebar Item Text: Use --color-dark-on-green-text (#1e1e1e).
-Main Content Area Background: Use --color-dark-primary-bg (#282828).
-Card/Section Backgrounds (Avatar, Speech, Text, Processed): Use --color-dark-card-bg (#3c3c3c). Add a subtle border: 1px solid var(--color-dark-border-subtle); (#444444).
-Labels (e.g., "Select Avatar", "Animation Speed"): Use --color-dark-secondary-text (#aaaaaa).
-Alphabet and Word Button Backgrounds: Use --color-dark-green-primary (#b8f278).
-Alphabet and Word Button Text: Use --color-dark-on-green-text (#1e1e1e).
-Alphabet and Word Button Hover: Use background-color: var(--color-dark-green-hover); (#aedd6a).
-"Mic On", "Mic Off", "Start Animations" Button Backgrounds: Use --color-dark-green-primary (#b8f278).
-"Mic On", "Mic Off", "Start Animations" Button Text: Use --color-dark-on-green-text (#1e1e1e).
-"Mic On", "Mic Off", "Start Animations" Button Hover: Use background-color: var(--color-dark-green-hover); (#aedd6a).
-"Clear" Button Background: Use --color-dark-button-secondary-bg (#4a5565).
-"Clear" Button Text: Use --color-dark-primary-text (#cccccc).
-"Clear" Button Hover: Use background-color: var(--color-dark-button-secondary-hover); (#5a6575).
-Canvas Container Outline: Use outline-color: var(--color-dark-outline); (#666666).
-Input Fields/Textareas Background: Use --color-dark-input-bg (#444444).
-Input Fields/Textareas Text: Use --color-dark-primary-text (#cccccc).
-Input Fields/Textareas Border: Use border-color: var(--color-dark-border-input); (#666666).
-Input Fields/Textareas Placeholder Text: Use color: var(--color-dark-placeholder); (#888888).
-Speech Recognition Status Text ("on"/"off"): Use --color-dark-blue-status (#60a5fa).
-Slider Track: Style the track with background-color: var(--color-dark-slider-track); (#555555).
-Slider Active Track: Style the active part with background-color: var(--color-dark-green-active-slider); (#73a049).
-Slider Thumb: Style the thumb with background-color: var(--color-dark-slider-thumb); (#b8f278).
-*/
+### Light Mode Tailwind CSS Colors:
+
+* **Background:**
+    * **Primary:** `bg-gray-50` (similar to `#F9F9F9`) or `bg-white` (`#FFFFFF`).
+    * **Secondary (for cards, panels):** `bg-white` (if primary is `bg-gray-50`) or `bg-gray-100` (similar to `#F2F2F2`).
+* **Text:**
+    * **Primary:** `text-gray-800` or `text-black`.
+    * **Secondary (for less important text, labels):** `text-gray-500`.
+* **Primary Accent (using Tailwind's default blues, greens, purples as examples):**
+    * Blue: `bg-blue-500`, `text-white` for button text.
+    * Green: `bg-green-500`, `text-white` for button text.
+    * Purple: `bg-purple-500`, `text-white` for button text.
+* **Secondary Accent:**
+    * Blue: `bg-blue-100`, `text-blue-700`.
+    * Green: `bg-green-100`, `text-green-700`.
+    * Purple: `bg-purple-100`, `text-purple-700`.
+* **Button Colors:**
+    * **Primary Button:** `bg-{primary-accent}-500 text-white`. Replace `{primary-accent}` with your chosen color (e.g., `bg-blue-500 text-white`).
+    * **Secondary Button:** `bg-white text-{primary-accent}-500 border border-{primary-accent}-500`.
+    * **Disabled Button:** `bg-gray-200 text-gray-500`.
+* **Card Colors:**
+    * `bg-white` with an optional `border border-gray-200`.
+* **Hover Colors:**
+    * **Buttons:** `hover:bg-{primary-accent}-600` for primary buttons. For secondary buttons, `hover:bg-gray-100` or `hover:border-{primary-accent}-600`.
+    * **Interactive Elements:** Use `hover:text-{color}-700` or `hover:bg-{color}-100` depending on the element. You might also use `hover:underline`.
+* **Focus Indicators:** Tailwind provides default focus styles. You can customize them using the `focus` prefix (e.g., `focus:outline-none focus:ring-2 focus:ring-{primary-accent}-500`).
+
+### Dark Mode Tailwind CSS Colors:
+
+* **Background:**
+    * **Primary:** `bg-gray-900` (similar to `#121212`) or `bg-gray-800` (similar to `#1E1E1E`).
+    * **Secondary (for cards, panels):** `bg-gray-800` or `bg-gray-700` (similar to `#212121`).
+* **Text:**
+    * **Primary:** `text-gray-200` or `text-white`. Consider `text-gray-300` for a softer white.
+    * **Secondary (for less important text, labels):** `text-gray-400`.
+* **Primary Accent (lighter and more vibrant):**
+    * Blue: `bg-blue-400`, `text-gray-800` or `text-black` for button text.
+    * Green: `bg-green-400`, `text-gray-800` or `text-black` for button text.
+    * Purple: `bg-purple-400`, `text-gray-800` or `text-black` for button text.
+* **Secondary Accent:**
+    * Blue: `bg-blue-700`, `text-blue-200`.
+    * Green: `bg-green-700`, `text-green-200`.
+    * Purple: `bg-purple-700`, `text-purple-200`.
+* **Button Colors:**
+    * **Primary Button:** `bg-{primary-accent}-400 text-gray-800`.
+    * **Secondary Button:** `bg-gray-800 text-{primary-accent}-400 border border-{primary-accent}-400`.
+    * **Disabled Button:** `bg-gray-600 text-gray-400`.
+* **Card Colors:**
+    * `bg-gray-800` with an optional `border border-gray-600`.
+* **Hover Colors:**
+    * **Buttons:** `hover:bg-{primary-accent}-500` for primary buttons. For secondary buttons, `hover:bg-gray-700` or `hover:border-{primary-accent}-500`.
+    * **Interactive Elements:** Use `hover:text-{color}-300` or `hover:bg-{color}-700`.
+* **Focus Indicators:** `focus:outline-none focus:ring-2 focus:ring-{primary-accent}-400`.
+
+**How to Implement in Tailwind CSS:**
+
+1.  **Extend Tailwind Theme (optional but recommended for custom colors):**
+    You can extend Tailwind's default theme in your `tailwind.config.js` file to define your brand's specific colors.
+
+    ```javascript
+    /** @type {import('tailwindcss').Config} */
