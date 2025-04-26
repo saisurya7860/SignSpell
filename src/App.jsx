@@ -1,4 +1,4 @@
-import { BrowserRouter,Routes,Route } from 'react-router-dom';
+import { HashRouter,Routes,Route } from 'react-router-dom';
 import Layout from './Components/Layout';
 import Home from './Pages/Home';
 import Register from './Pages/Register';
@@ -14,7 +14,7 @@ import { ThemeContext } from './Context/ThemeContext';
 const App = () => {
   return (
     <div className='Montserrat'>
-      <BrowserRouter basename="/SignSpell">
+      <HashRouter>
         <Routes>
           <Route  path="/register" element={<Register />}></Route>
           <Route element={<Layout/>}>
@@ -28,7 +28,7 @@ const App = () => {
           </Route>
           
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </div>
   );
 };
