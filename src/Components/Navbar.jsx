@@ -32,7 +32,7 @@ const Navbar = () => {
                     <div className='dark:bg-white dark:rounded-full'>
                         <img src={sign_spell} className='w-[40px] h-[40px] bold'/>
                     </div>
-                    <div className='flex text-2xl font-bold  dark:text-white text-blue-600'>SignSpell</div>
+                    <div className='flex text-2xl font-bold  text-blue-600'>SignSpell</div>
                 </div>
             </Link>
             

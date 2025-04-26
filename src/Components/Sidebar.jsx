@@ -20,7 +20,7 @@ const Sidebar = () => {
                         <div className='dark:bg-white dark:rounded-full'>
                             <img src={sign_spell} className='w-[40px] h-[40px] bold'/>
                         </div>
-                        <div className='transition-all duration-300 text-2xl font-bold dark:text-white text-blue-600'>SignSpell</div>
+                        <div className='transition-all duration-300 text-2xl font-bold  text-blue-600'>SignSpell</div>
                     </div>
                 </Link>
                 <div className='mt-8 flex flex-col  gap-1 text-[1.13rem]'>
