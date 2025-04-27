@@ -86,7 +86,7 @@ return (
         <div className="fixed top-0 left-0 w-full h-full bg-black/70 flex items-center justify-center z-50">
             <div className="bg-white dark:bg-gray-700 p-4 rounded-lg max-w-3xl w-full">
                 <video src={selectedVideo} controls autoPlay className="w-full rounded" />
-                <button onClick={() => setSelectedVideo(null)} className="mt-4 px-4 py-2 cursor-pointer bg-red-500 text-white rounded" >Close</button>
+                <button onClick={() => setSelectedVideo(null)} className="mt-4 px-4 py-2 cursor-pointer bg-blue-500 text-gray-100 active:bg-gray-500 dark:text-gray-800 hover:bg-gray-500 dark:hover:text-gray-200 rounded" >Close</button>
             </div>
         </div>
         )}
