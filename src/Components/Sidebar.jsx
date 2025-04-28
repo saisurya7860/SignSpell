@@ -7,9 +7,9 @@ import { FaCameraRetro } from 'react-icons/fa';
 
 const Sidebar = () => {
     const sidebarData = {   
-        routesPath:['/','/learnsign','/convertsign','/docs','/videoinput','/setting'],
-        routesName:['Dashboard','Learn Sign','Convert','Docs','WebCam','Settings'],
-        icons:[FaChartBar,FaSignLanguage,FaExchangeAlt,FaFileAlt,FaCameraRetro,FaCog]
+        routesPath:['/','/learnsign','/convertsign','/docs','/videoinput','/setting','/register'],
+        routesName:['Dashboard','Learn Sign','Convert','Docs','WebCam','Settings','Register'],
+        icons:[FaChartBar,FaSignLanguage,FaExchangeAlt,FaFileAlt,FaCameraRetro,FaCog,FaCog]
     }
   return (
     <>

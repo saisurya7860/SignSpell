@@ -25,6 +25,7 @@ const App = () => {
             <Route  path="/docs" element={<Docs />}></Route>
             <Route  path="/videoInput" element={<VideoInput />}></Route>
             <Route  path="/profile" element={<Profile />}></Route>
+            <Route  path="/register" element={<Register />}></Route>
           </Route>
           
         </Routes>
