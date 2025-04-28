@@ -10,7 +10,7 @@ const Settings = () => {
   
 
   return (
-    <div className='h-screen p-3 '>
+    <div className='min-h-screen p-3 '>
       <div className='dark:bg-gray-700 bg-gray-50 rounded-md p-2'>
         <p className='dark:text-gray-300 text-gray-700  text-2xl font-semibold'>Settings</p>
         <div className=''>

@@ -49,7 +49,7 @@ const Accounts = () => {
 
           {/* Username and email div */}
           <div className='flex flex-col items-start justify-center gap-3'>
-              <p className='text-3xl font-bold'>{accountData.userProfile.name}</p>
+              <p className='text-3xl font-bold text-gray-800 dark:text-gray-300'>{accountData.userProfile.name}</p>
               <div className=" text-gray-500 dark:text-gray-400 flex items-center gap-2">
                 <FaEnvelope/>
                 <p className='font-semibold text-sm text-gray-700 dark:text-gray-400'>{accountData.userProfile.Email}</p>
@@ -67,7 +67,7 @@ const Accounts = () => {
         
         {!editProfile && (
         <div className='border-t border-gray-600 mt-6 p-6  flex flex-col  space-y-6'>
-          <p className='text-lg font-semibold'>Profile Details</p>
+          <p className='text-lg font-semibold text-gray-800 dark:text-gray-300 '>Profile Details</p>
           <div className='text-gray-800 dark:text-gray-300 '>
             <div className='font-semibold'>Bio</div>
             <div className='text-sm text-gray-500 dark:text-gray-400'>{accountData.userProfile.bio}</div>
@@ -102,7 +102,7 @@ const Accounts = () => {
       )}
         {editProfile && (
         <div className='border-t border-gray-600 mt-6 p-6'>
-          <p className='text-lg font-semibold'>Profile Details</p>
+          <p className='text-lg font-semibold text-gray-800 dark:text-gray-300'>Profile Details</p>
           <div className='mt-3'>
             <p>Bio</p>
             <textarea name="Bio" id="" className='outline-none px-2 py-1 bg-gray-300 dark:bg-gray-800 rounded w-full mt-2 h-20'></textarea>
