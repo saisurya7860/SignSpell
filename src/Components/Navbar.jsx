@@ -78,7 +78,7 @@ const Navbar = () => {
                                 return (
                                     <NavLink to={route} key={route}>{({ isActive }) => (
                                         <div className={`flex items-center gap-x-4 p-2 w-full rounded-md ${isActive ? 'bg-blue-500 dark:bg-blue-400' : ''}`}>
-                                            <Icon className={`${isActive ? 'text-neutral-900' :'text-gray-700 dark:text-gray-300 text-xl'}`} />
+                                            <Icon className={`${isActive ? 'text-neutral-800 text-xl' :'text-gray-500 dark:text-gray-300 text-xl'}`} />
                                             {/* <Icon className="text-2xl text-gray-600 pr-1" /> */}
                                             <p className={`${isActive ? 'text-white dark:text-gray-800' : 'text-gray-800 dark:text-gray-300'}`}>{navSidebarData.routesName[index]}</p>
                                         </div>

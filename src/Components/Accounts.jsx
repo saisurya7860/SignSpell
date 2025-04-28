@@ -55,7 +55,7 @@ const Accounts = () => {
                 <p className='font-semibold text-sm text-gray-700 dark:text-gray-400'>{accountData.userProfile.Email}</p>
               </div>
               <p className='text-gray-600 text-xs  dark:text-gray-400 '>MemberSince: {accountData.userProfile.memberSince}</p>
-              {!editProfile ? <button className='cursor-pointer  w-30 pl-2 h-10 dark:bg-gray-800 bg-gray-300 rounded-md border flex items-center gap-2 border-gray-400 dark:border-gray-600' onClick={()=> setEditProfile(!editProfile)}><FaPen/> Edit Profile</button>
+              {!editProfile ? <button className='cursor-pointer text-gray-800 dark:text-gray-300  w-30 pl-2 h-10 dark:bg-gray-800 bg-gray-300 rounded-md border flex items-center gap-2 border-gray-400 dark:border-gray-600' onClick={()=> setEditProfile(!editProfile)}><FaPen/> Edit Profile</button>
               :
               <div className='space-x-2'> 
                 <button className='cursor-pointer py-1 px-2 bg-gray-300 text-gray-800 dark:text-gray-200 dark:bg-gray-800 border border-gray-400 dark:border-gray-600 rounded' onClick={()=> setEditProfile(!editProfile)}>Cancel</button>
