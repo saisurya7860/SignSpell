@@ -33,7 +33,7 @@ const Accounts = () => {
             <label htmlFor="fileInput" className="cursor-pointer flex items-center justify-center rounded-full w-38 h-38 bg-gray-300 hover:bg-gray-400 dark:bg-gray-900  dark:hover:bg-gray-800">
               {userImage ?(
                 <img src={userImage} alt="Selected user image" className="rounded-full object-cover w-full h-full" />
-              ) : ( <div className='text-2xl'><FaCameraRetro/></div>)}
+              ) : ( <div className='text-2xl dark:text-gray-400 text-gray-700'><FaCameraRetro/></div>)}
               
               <input
                 id="fileInput"
