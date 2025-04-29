@@ -18,13 +18,13 @@ const App = () => {
       <HashRouter>
         <Routes>
           <Route  path="/register" element={<Register />}></Route>
+          <Route  path="/docs" element={<Docs />}></Route>
           <Route element={<ProtectedRoute/>}>
             <Route element={<Layout/>}>
               <Route  path="/" element={<Home />}></Route>
               <Route  path="/learnsign" element={<LearnSign />}></Route>
               <Route  path="/convertsign" element={<ConvertSign />}></Route>
               <Route  path="/setting" element={<Settings />}></Route>
-              <Route  path="/docs" element={<Docs />}></Route>
               <Route  path="/videoInput" element={<VideoInput />}></Route>
               <Route  path="/profile" element={<Profile />}></Route>
               <Route  path="/register" element={<Register />}></Route>
