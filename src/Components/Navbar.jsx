@@ -11,6 +11,7 @@ import { FaChartBar, FaSignLanguage, FaExchangeAlt, FaFileAlt, FaCog } from 'rea
 import { FaCameraRetro } from 'react-icons/fa';
 import sign_spell from '../assets/General/logo.png';
 import { ThemeContext } from '../Context/ThemeContext.jsx';
+import { userAuth } from '../Context/AuthContext.jsx';
 
 const Navbar = () => {
     const navigate = useNavigate();
@@ -26,6 +27,11 @@ const Navbar = () => {
     // Drakmode setting
     const { darkMode, setDarkMode } = useContext(ThemeContext);
     const [openProfile,setOpenProfile] = useState(false);
+    const {logout} = userAuth();
+    const handleLogOut =()=>{
+        logout(null);
+        navigate('/register');
+    }
   return (
     <div className=''>
         <section className='flex w-full items-center bg-gray-50 dark:bg-gray-700 border dark:border-gray-600 justify-between z-20 p-2 border-b border-gray-200'>
@@ -57,7 +63,9 @@ const Navbar = () => {
                     </div>
                     <p className='hidden md:flex text-md relative top-[-3px] font-extralight text-gray-600 dark:text-gray-300'>{openProfile ? <FaChevronDown/> :  <FaChevronUp/>}</p>
                 </div>
-                
+                <button onClick={()=> handleLogOut()} className="bg-blue-500 cursor-pointer text-white px-2 py-1 rounded md:flex hidden mt-2">
+                    Logout
+                </button>
             </div>
         </section>
 
@@ -86,9 +94,18 @@ const Navbar = () => {
                                     </NavLink>
         
                                 )})}
+                                
+                                
                         </div>
                     </div>
+                    <div className='flex items-center justify-center mt-10'>
+                        <button onClick={()=> handleLogOut()} className="bg-blue-500 cursor-pointer  text-white px-6 py-2 rounded flex md:hidden mt-2">
+                            Logout
+                        </button>
+                    </div>
+                    
                 </div>
+               
             </aside>): null}
     </div>
   )

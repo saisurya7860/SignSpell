@@ -4,13 +4,19 @@ import { Link } from 'react-router-dom';
 import sign_spell from '../assets/General/logo.png'
 import { FaChartBar, FaSignLanguage, FaExchangeAlt, FaFileAlt, FaCog } from 'react-icons/fa';
 import { FaCameraRetro } from 'react-icons/fa';
+import { userAuth } from '../Context/AuthContext.jsx';
 
 const Sidebar = () => {
     const sidebarData = {   
-        routesPath:['/','/learnsign','/convertsign','/docs','/videoinput','/setting','/register'],
-        routesName:['Dashboard','Learn Sign','Convert','Docs','WebCam','Settings','Register'],
-        icons:[FaChartBar,FaSignLanguage,FaExchangeAlt,FaFileAlt,FaCameraRetro,FaCog,FaCog]
+        routesPath:['/','/learnsign','/convertsign','/docs','/videoinput','/setting',],
+        routesName:['Dashboard','Learn Sign','Convert','Docs','WebCam','Settings',],
+        icons:[FaChartBar,FaSignLanguage,FaExchangeAlt,FaFileAlt,FaCameraRetro,FaCog,]
     }
+    const {logout} = userAuth();
+        const handleLogOut =()=>{
+            logout(null);
+            navigate('/register');
+        }
   return (
     <>
         <aside className='hidden md:flex transition-all w-[230px]  px-4 duration-300  flex-col bg-gray-50 dark:bg-gray-700 border dark:border-gray-600  justify-between z-50 h-screen border-r border-gray-200'>
@@ -37,6 +43,8 @@ const Sidebar = () => {
                             </NavLink>
 
                         )})}
+
+                        
 
                     {/* {sidebarData.routesPath.map((route,index) =>(
                         <NavLink to={route} key={index} className={({ isActive }) =>`flex items-center gap-2 p-1.5 rounded-md ${isActive ? 'bg-[#bdf094]' : ''}`}>

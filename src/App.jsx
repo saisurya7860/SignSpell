@@ -10,6 +10,7 @@ import VideoInput from './Pages/VideoInput';
 import Profile from './Pages/Profile';
 import { useContext } from 'react';
 import { ThemeContext } from './Context/ThemeContext';
+import ProtectedRoute from './Components/ProtectedRoute';
 
 const App = () => {
   return (
@@ -17,17 +18,18 @@ const App = () => {
       <HashRouter>
         <Routes>
           <Route  path="/register" element={<Register />}></Route>
-          <Route element={<Layout/>}>
-            <Route  path="/" element={<Home />}></Route>
-            <Route  path="/learnsign" element={<LearnSign />}></Route>
-            <Route  path="/convertsign" element={<ConvertSign />}></Route>
-            <Route  path="/setting" element={<Settings />}></Route>
-            <Route  path="/docs" element={<Docs />}></Route>
-            <Route  path="/videoInput" element={<VideoInput />}></Route>
-            <Route  path="/profile" element={<Profile />}></Route>
-            <Route  path="/register" element={<Register />}></Route>
+          <Route element={<ProtectedRoute/>}>
+            <Route element={<Layout/>}>
+              <Route  path="/" element={<Home />}></Route>
+              <Route  path="/learnsign" element={<LearnSign />}></Route>
+              <Route  path="/convertsign" element={<ConvertSign />}></Route>
+              <Route  path="/setting" element={<Settings />}></Route>
+              <Route  path="/docs" element={<Docs />}></Route>
+              <Route  path="/videoInput" element={<VideoInput />}></Route>
+              <Route  path="/profile" element={<Profile />}></Route>
+              <Route  path="/register" element={<Register />}></Route>
+            </Route>
           </Route>
-          
         </Routes>
       </HashRouter>
     </div>

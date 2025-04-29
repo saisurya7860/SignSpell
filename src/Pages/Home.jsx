@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState,} from 'react';
 import { MdMenu } from "react-icons/md";
 import { MdApps } from "react-icons/md";
 import Hello from "../assets/General/Hello2.mp4";
 import { FaPlay } from 'react-icons/fa';
 import { FaClapperboard } from 'react-icons/fa6';
 import { MdMoreVert } from 'react-icons/md';
+import { useContext } from 'react';
+import { useLocation } from 'react-router-dom';
 
 const Home = () => {
 
@@ -45,10 +47,10 @@ const Home = () => {
 
           ]
     }
-
+  
     const [grid,setGrid] = useState(false);
     const [selectedVideo,setSelectedVideo] = useState(null);
-    
+   
 
 return (
     <div className='h-screen'>

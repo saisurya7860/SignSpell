@@ -9,10 +9,27 @@ import bannerbg from '../assets/LoginHomeassests/banner-bg.jpg'
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
 import { useNavigate } from 'react-router-dom'
+import { AuthContext } from '../Context/AuthContext';
+import { useContext } from 'react';
 
 const Register = () => {
     const navigate = useNavigate();
-    const [login, setLogin] = useState(false);
+    const [loginPage, setLoginPage] = useState(false);
+    const {login} = useContext(AuthContext);
+
+    const [email, setEmail] = useState(null);
+    const [password, setPassword] = useState(null);
+    const handleLogin = (e) =>{
+        e.preventDefault(); 
+        const success = login(email,password);
+        if(success){
+            navigate('/');
+        }
+        else{
+            alert('Invalid email or password')
+        }
+    }
+
 
   return (
     <div className='h-screen flex md:flex-row flex-col'>
@@ -42,15 +59,17 @@ const Register = () => {
            </div>
         </div> 
          {/*login page right  */}
-        {!login && (<div className='md:w-1/2 min-h-screen h-full flex flex-col justify-center items-center bg-gray-50 p-4'>    
+        
+        {!loginPage && (<div className='md:w-1/2 min-h-screen h-full flex flex-col justify-center items-center bg-gray-50 p-4'>    
+            <p className='text-blue-400 text-center'>Move to login page Register page is still under development</p>
             <div className='flex flex-col justify-start items-start gap-2 '>
                 <p className='text-3xl font-semibold'>Create Account</p> 
                 <p className='text-sm  font-medium'>Start your SignSpell Experience.</p>
             </div>
            
             <div className="flex flex-col w-full max-w-xs mt-4">
-                <label htmlFor="email" className="text-gray-700">Name</label>
-                <input type="email" id="email" className="border w-full border-gray-300 rounded-md p-2 mb-4" placeholder="Enter your name" required />
+                <label htmlFor="name" className="text-gray-700">Name</label>
+                <input type="text" id="name" className="border w-full border-gray-300 rounded-md p-2 mb-4" placeholder="Enter your name" required />
             </div>
 
            <div className="flex flex-col w-full max-w-xs mt-4">
@@ -65,33 +84,35 @@ const Register = () => {
                 <label htmlFor="confirm-password" className="text-gray-700">Confirm Password</label>
                 <input type="password" id="confirm-password" className="border border-gray-300 rounded-md p-2 mb-4" placeholder="Confirm your password" required />
             </div>
-            <button className='bg-blue-500 text-white py-2 px-4 rounded-md cursor-pointer'>Register</button>
+            <button className='bg-blue-500 text-white w-full max-w-xs py-2 rounded-md cursor-pointer'>Register</button>
             <div className='mt-4'>
-                Already have an account? <span onClick={() => setLogin(!login)}  className='text-blue-500 cursor-pointer'>Login</span>
+                Already have an account? <span onClick={() => setLoginPage(!loginPage)}  className='text-blue-500 cursor-pointer'>Login</span>
            </div>
            
         </div>)}
 
-        {login && (<div className='md:w-1/2 min-h-screen h-full flex flex-col justify-center items-center bg-gray-50 p-4'>    
+        {loginPage && (<div className='md:w-1/2 min-h-screen h-full flex flex-col justify-center items-center bg-gray-50 p-4'>    
             <div className='flex flex-col justify-start items-start gap-2 '>
                 <p className='text-3xl font-semibold'>Login Account</p> 
                 <p className='text-sm  font-medium'>Start your SignSpell Experience.</p>
             </div>
-           
-           <div className="flex flex-col w-full max-w-xs mt-4">
-                <label htmlFor="email" className="text-gray-700">Email</label>
-                <input type="email" id="email" className="border w-full border-gray-300 rounded-md p-2 mb-4" placeholder="Enter your email" required />
+           <form onSubmit={() => handleLogin} className='w-full flex flex-col max-w-xs'>
+                <div className="flex flex-col w-full max-w-xs mt-4">
+                    <label htmlFor="email" className="text-gray-700">Email</label>
+                    <input type="email" id="email" onChange={(e) => setEmail(e.target.value)} className="border w-full border-gray-300 rounded-md p-2 mb-4" placeholder="Enter your email" required />
+                </div>
+
+                <div className="flex flex-col w-full max-w-xs mt-4 ">
+                    <label htmlFor="password" className="text-gray-700">Password</label>
+                    <input type="password" id="password" onChange={(e) => setPassword(e.target.value)} className="border border-gray-300 rounded-md p-2 mb-4" placeholder="Enter your password" required />
+                </div>
+                    
+                <button onClick={(e) => handleLogin(e)} type="submit" className='bg-blue-500 text-white py-2 px-4 rounded-md cursor-pointer'>Login</button>
+            </form>
+            <div className='mt-4'>
+                Already have an account? <span href="/login"  onClick={() => setLoginPage(!loginPage)}  className='text-blue-500 cursor-pointer'>Register</span>
             </div>
 
-            <div className="flex flex-col w-full max-w-xs mt-4 ">
-                <label htmlFor="password" className="text-gray-700">Password</label>
-                <input type="password" id="password" className="border border-gray-300 rounded-md p-2 mb-4" placeholder="Enter your password" required />
-            </div>
-            
-            <button className='bg-blue-500 text-white py-2 px-4 rounded-md cursor-pointer'>Login</button>
-            <div className='mt-4'>
-                Already have an account? <span href="/login"  onClick={() => setLogin(!login)}  className='text-blue-500 cursor-pointer'>Register</span>
-           </div>
            
         </div>)}
 
