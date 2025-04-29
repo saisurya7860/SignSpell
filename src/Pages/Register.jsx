@@ -6,7 +6,7 @@ import nmlogo from '../assets/LoginHomeassests/nm-logo.svg'
 import tnlogo from '../assets/LoginHomeassests/tn-logo.svg'
 import ntlogo from '../assets/LoginHomeassests/logo.webp'
 import bannerbg from '../assets/LoginHomeassests/banner-bg.jpg'
-import { FaEye } from "react-icons/fa";
+import { FaArrowRight, FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
 import { useNavigate } from 'react-router-dom'
 import { AuthContext } from '../Context/AuthContext';
@@ -30,6 +30,11 @@ const Register = () => {
         }
     }
 
+    const scrollBtn = () =>{
+        const loginSection = document.getElementById('login');
+        loginSection?.scrollIntoView({ behavior: 'smooth' });
+    }
+
 
   return (
     <div className='h-screen flex md:flex-row flex-col'>
@@ -37,13 +42,14 @@ const Register = () => {
             <div className='flex flex-col justify-center items-center gap-2 mt-10'>
                 <img src={logo} alt="" className='w-30 h-30'/> 
                 <div className='font-bold text-3xl'>SignSpell</div>
-                <div className='flex flex-col gap-10 mt-10 items-center'>
-                    <div className='text-gray-50 text-3xl font-semibold text-center'>Where voices become 
-                        <span className='text-blue-700 text-3xl font-semibold'> Signs</span> ,
+                <div className='flex flex-col gap-10 m-4 md:mt-10 items-center'>
+                    <div className='text-gray-50 text-2xl md:text-3xl font-bold text-center'>Where voices become 
+                        <span className='text-blue-700 text-2xl md:text-3xl font-bold'> Signs</span> ,
                         <div className='text-center'>no one is left behind</div>
                     </div>
                     
-                    <div className='max-w-130 text-center text-gray-700 font-normal '>Empower every voice — join SignSpell in creating a world where signs speak louder than words.</div>
+                    <div className='max-w-130 text-center text-sm text-gray-700 font-normal '>Empower every voice — join SignSpell in creating a world where signs speak louder than words.</div>
+                    <button onClick={()=> scrollBtn()} className='bg-gray-50 py-1.5 px-3 rounded-3xl md:hidden flex items-center gap-1 text-blue-400 font-semibold'>Log In/Sign Up <p className='font-light'><FaArrowRight/></p> </button>
                 </div>
             </div>
           
@@ -60,7 +66,7 @@ const Register = () => {
         </div> 
          {/*login page right  */}
         
-        {!loginPage && (<div className='md:w-1/2 min-h-screen h-full flex flex-col justify-center items-center bg-gray-50 p-4'>    
+        {!loginPage && (<div id="login" className='md:w-1/2 min-h-screen h-full flex flex-col justify-center items-center bg-gray-50 p-4'>    
             <p className='text-blue-400 text-center'>Move to login page Register page is still under development</p>
             <div className='flex flex-col justify-start items-start gap-2 '>
                 <p className='text-3xl font-semibold'>Create Account</p> 
@@ -96,7 +102,7 @@ const Register = () => {
                 <p className='text-3xl font-semibold'>Login Account</p> 
                 <p className='text-sm  font-medium'>Start your SignSpell Experience.</p>
             </div>
-           <form onSubmit={() => handleLogin} className='w-full flex flex-col max-w-xs'>
+           <form onSubmit={handleLogin} className='w-full flex flex-col max-w-xs'>
                 <div className="flex flex-col w-full max-w-xs mt-4">
                     <label htmlFor="email" className="text-gray-700">Email</label>
                     <input type="email" id="email" onChange={(e) => setEmail(e.target.value)} className="border w-full border-gray-300 rounded-md p-2 mb-4" placeholder="Enter your email" required />
