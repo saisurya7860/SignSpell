@@ -72,7 +72,7 @@ const Register = () => {
            
         </div>)}
 
-        {login && (<div className='w-1/2 h-full flex flex-col justify-center items-center bg-gray-50 p-4'>    
+        {login && (<div className='md:w-1/2 min-h-screen h-full flex flex-col justify-center items-center bg-gray-50 p-4'>    
             <div className='flex flex-col justify-start items-start gap-2 '>
                 <p className='text-3xl font-semibold'>Login Account</p> 
                 <p className='text-sm  font-medium'>Start your SignSpell Experience.</p>
