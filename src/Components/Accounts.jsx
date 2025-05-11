@@ -59,7 +59,7 @@ const Accounts = () => {
               :
               <div className='space-x-2'> 
                 <button className='cursor-pointer py-1 px-2 bg-gray-300 text-gray-800 dark:text-gray-200 dark:bg-gray-800 border border-gray-400 dark:border-gray-600 rounded' onClick={()=> setEditProfile(!editProfile)}>Cancel</button>
-                <button className='cursor-pointer py-1 px-3 border-gray-600 rounded text-gray-100 bg-blue-500' onClick={()=> setEditProfile(!editProfile)}>Save</button>
+                <button className='cursor-pointer py-1 px-3 border-gray-600 rounded text-gray-100 bg-green-500' onClick={()=> setEditProfile(!editProfile)}>Save</button>
               </div>}
               
           </div>
@@ -129,7 +129,7 @@ const Accounts = () => {
 
         <div className='mt-6 p-6 bg-gray-100 dark:bg-gray-900 rounded-md border-gray-300 dark:border-gray-600 border'>
           <div className='flex items-center gap-2 mb-4'>
-            <div className='text-xl font-light text-blue-400'><FaUnlockAlt/></div>
+            <div className='text-xl font-light text-green-400'><FaUnlockAlt/></div>
             <p className='text-lg font-semibold text-gray-800 dark:text-gray-300'>Change Password</p>
           </div>
 
@@ -137,8 +137,8 @@ const Accounts = () => {
                 <div>
                   <div className='mb-2 text-sm text-gray-600'>Current Password</div>
                   <div className='relative max-w-70'>
-                      <input type="text" className='bg-gray-50 outline-none px-2 dark:bg-gray-600 py-1 w-full rounded border border-gray-500 focus:ring-blue-400 '/>
-                      <button type="button" className=" cursor-pointer absolute inset-y-0 right-2 flex items-center dark:text-gray-400 text-gray-600  dark:hover:text-gray-200" onClick={() =>setShowPassword(!showPassword)}>
+                      <input type="text" className='focus:outline-none focus:ring-2 focus:ring-green-600 bg-gray-50 outline-none px-2 dark:bg-gray-600 py-1 w-full rounded border border-gray-500 '/>
+                      <button type="button" className="cursor-pointer absolute inset-y-0 right-2 flex items-center dark:text-gray-400 text-gray-600  dark:hover:text-gray-200" onClick={() =>setShowPassword(!showPassword)}>
                         {showPassword ? <FaEyeSlash /> : <FaEye />}
                       </button>
                   </div>
@@ -147,7 +147,7 @@ const Accounts = () => {
                 <div>
                   <div className='mb-2 text-sm  text-gray-600'>New Password</div>
                   <div className='relative max-w-70'>
-                      <input type="text" className='outline-none bg-gray-50 px-2 dark:bg-gray-600 py-1 w-full rounded border border-gray-500 focus:ring-blue-400 '/>
+                      <input type="text" className='focus:outline-none focus:ring-2 focus:ring-green-600 outline-none bg-gray-50 px-2 dark:bg-gray-600 py-1 w-full rounded border border-gray-500 '/>
                       <button type="button" className=" cursor-pointer absolute inset-y-0 right-2 flex items-center dark:text-gray-400 text-gray-600  dark:hover:text-gray-200" onClick={()      =>setShowPassword(!showPassword)}>
                         {showPassword ? <FaEyeSlash /> : <FaEye />}
                       </button>
@@ -157,7 +157,7 @@ const Accounts = () => {
                 <div>
                   <div className='mb-2 text-sm  text-gray-600'>Confirm Password</div>
                   <div className='relative max-w-70'>
-                      <input type="text" className='outline-none px-2 bg-gray-50  dark:bg-gray-600 py-1 w-full rounded border border-gray-500 focus:ring-blue-400 '/>
+                      <input type="text" className='focus:outline-none focus:ring-2 focus:ring-green-600 outline-none px-2 bg-gray-50  dark:bg-gray-600 py-1 w-full rounded border border-gray-500 '/>
                       <button type="button" className=" cursor-pointer absolute inset-y-0 right-2 flex items-center dark:text-gray-400 text-gray-600  dark:hover:text-gray-200" onClick={()      =>setShowPassword(!showPassword)}>
                         {showPassword ? <FaEyeSlash /> : <FaEye />}
                       </button>

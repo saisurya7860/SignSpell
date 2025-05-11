@@ -26,7 +26,7 @@ const General = () => {
                     <option value="Europe/London">Europe/London (GMT)</option>
                     <option value="Europe/Berlin">Europe/Berlin (CET)</option>
                 </select>      
-                <style jsx>{`
+                <style>{`
                     select {
                         background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="5" height="5" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z" fill="%23FFFFFF"/></svg>');
                         background-repeat: no-repeat;
@@ -37,7 +37,7 @@ const General = () => {
             </div>
         </div>
         <div className='w-full mt-3 flex justify-end items-center'>
-            <button className='bg-blue-500 dark:bg-blue-400 dark:hover:bg-blue-500 text-gray-100 active:bg-gray-500 dark:text-gray-800 hover:bg-blue-600 dark:hover:text-gray-200 p-2 rounded cursor-pointer'>Save General Settings</button>
+            <button className='bg-green-500 dark:bg-green-400 dark:hover:bg-green-500 text-gray-100 active:bg-gray-500 dark:text-gray-800 hover:bg-green-600 dark:hover:text-gray-200 p-2 rounded cursor-pointer'>Save General Settings</button>
         </div>
         </div>
     </div>

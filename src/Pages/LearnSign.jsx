@@ -28,7 +28,7 @@ function LearnSign() {
       height: 5,
     },
     active: {
-      backgroundColor: "#51a2ff",
+      backgroundColor: "#00c951",
     },
     thumb: {
       width: 20,
@@ -104,7 +104,7 @@ function LearnSign() {
         }
 
         let cameraHeight = window.innerHeight * 0.53; // 60% of screen height for camera
-        let canvasHeight = window.innerHeight * 0.434; // ~43% of screen height for canvas
+        let canvasHeight = window.innerHeight * 0.394; // ~43% of screen height for canvas
 
         // Update camera aspect ratio and projection matrix
         ref.camera.aspect = cameraWidth / cameraHeight;
@@ -190,14 +190,14 @@ function LearnSign() {
     <div className="flex flex-col space-y-10 p-3">
       {/* Sidebar (left) */}      
         <div className="flex flex-col gap-5 lg:flex-row items-center justify-center lg:justify-around ">
-          <div className="order-2 flex lg:order-1 rounded-lg outline-4 dark:outline-[#666666] outline-[#4a5565] justify-center items-center">
+          <div className="order-2 flex lg:order-1 rounded-lg outline-4  outline-[#4a5565] justify-center items-center">
             <div id="canvas" ref={canvasRef} className="w-full h-full" />
           </div>
 
           {/* Controls (middle) */}
 
-          <div className="order-1 lg:order-2 p-4 dark:bg-gray-700 dark:border dark:border-gray-600 border border-gray-200  bg-gray-50 rounded-lg">
-            <p className="text-lg font-semibold mb-2 dark:text-gray-300">Select Avatar</p>
+          <div className="order-1 lg:order-2 p-4  border border-gray-200  bg-gray-50 rounded-lg">
+            <p className="text-lg font-semibold mb-2 ">Select Avatar</p>
             <div className="flex space-x-2">
               <img
                 src={xbotPic}
@@ -213,7 +213,7 @@ function LearnSign() {
               />
             </div>
 
-            <p className="text-lg font-semibold mt-4 dark:text-gray-300">
+            <p className="text-lg font-semibold mt-4 ">
               Animation Speed: {Math.round(speed * 100) / 100}
             </p>
             <Slider
@@ -227,7 +227,7 @@ function LearnSign() {
               className="w-full"
             />
 
-            <p className="text-lg font-semibold mt-4 dark:text-gray-300">
+            <p className="text-lg font-semibold mt-4 ">
               Pause Time: {pause} ms
             </p>
             <Slider
@@ -244,13 +244,13 @@ function LearnSign() {
         </div>
 
       <div className="flex items-center">
-        <div className="w-full p-2 bg-gray-50 dark:bg-gray-700 dark:border dark:border-gray-600 border border-gray-200 shadow rounded-lg">
-          <h1 className="text-xl text-[#364153] dark:text-gray-300 font-bold mb-4">Alphabets</h1>
+        <div className="w-full p-2 bg-gray-50 border border-gray-200 shadow rounded-lg">
+          <h1 className="text-xl text-[#364153] font-bold mb-4">Alphabets</h1>
           <div className="grid-cols-8 grid sm:grid-cols-10 md:grid-cols-8 lg:grid-cols-9 gap-2">
             {Array.from({ length: 26 }, (_, i) => (
               <button
                 key={i}
-                className="p-2 bg-blue-400 text-gray-100 active:bg-gray-500 hover:bg-gray-500 hover:text-gray-200 dark:text-gray-800 font-bold text-lg rounded cursor-pointer"
+                className="p-2 bg-green-400 text-gray-100 active:bg-gray-500 hover:bg-gray-500 hover:text-gray-200  font-bold text-lg rounded cursor-pointer"
                 onClick={() => {
                   if (ref.animations.length === 0) {
                     alphabets[String.fromCharCode(i + 65)](ref);
@@ -262,12 +262,12 @@ function LearnSign() {
             ))}
           </div>
 
-          <h1 className="text-xl font-bold text-[#364153] dark:text-gray-300 mb-2">Words</h1>
+          <h1 className="text-xl font-bold text-[#364153]  mb-2">Words</h1>
           <div className="grid-cols-4 grid sm:grid-cols-4 gap-1 sm:gap-2">
             {words.wordList.map((word, i) => (
               <button
                 key={i}
-                className="p-2  bg-blue-400 text-gray-100 active:bg-gray-500 dark:text-gray-800 hover:bg-gray-500 dark:hover:text-gray-200 font-bold sm:text-lg cursor-pointer rounded"
+                className="p-2  bg-green-400 text-gray-100 active:bg-gray-500  hover:bg-gray-500  font-bold sm:text-lg cursor-pointer rounded"
                 onClick={() => {
                   if (ref.animations.length === 0) {
                     words[word](ref);

@@ -6,7 +6,6 @@ import LearnSign from './Pages/LearnSign';
 import ConvertSign from './Pages/ConvertSign';
 import Settings from './Pages/Settings';
 import Docs from './Pages/Docs';
-import VideoInput from './Pages/VideoInput';
 import Profile from './Pages/Profile';
 import { useContext } from 'react';
 import { ThemeContext } from './Context/ThemeContext';
@@ -25,7 +24,6 @@ const App = () => {
               <Route  path="/learnsign" element={<LearnSign />}></Route>
               <Route  path="/convertsign" element={<ConvertSign />}></Route>
               <Route  path="/setting" element={<Settings />}></Route>
-              <Route  path="/videoInput" element={<VideoInput />}></Route>
               <Route  path="/profile" element={<Profile />}></Route>
               <Route  path="/register" element={<Register />}></Route>
             </Route>

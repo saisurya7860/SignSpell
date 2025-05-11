@@ -20,7 +20,7 @@ const Settings = () => {
                 key={tab}
                 onClick={() => setActiveTab(tab)}
                 className={`py-2 px-1 border-b-2 cursor-pointer
-                  ${activeTab === tab ? 'border-blue-500 text-blue-500 font-semibold' : 'border-transparent'}`}
+                  ${activeTab === tab ? 'border-green-500 text-green-500 font-semibold' : 'border-transparent'}`}
               >
                 {tab}
               </p>

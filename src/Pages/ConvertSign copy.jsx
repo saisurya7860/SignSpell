@@ -159,71 +159,79 @@ const ConvertSign = () => {
   };
 
   return (
-    <div className="min-h-full p-3">
-
-      <div className="md:hidden block mb-6 mx-auto bg-gray-50 border border-gray-200  w-fit h-fit  p-4 rounded-lg">
-        <p className="text-lg font-semibold mb-2">Select Avatar</p>
-        <div className="flex gap-x-2">
-          <img
-            src={xbotPic}
-            className="w-20 h-20 cursor-pointer rounded-lg border border-gray-300 hover:scale-110"
-            onClick={() => setBot(xbot)}
-            alt="XBOT"
-          />
-          <img
-            src={ybotPic}
-            className="w-20 h-20 cursor-pointer rounded-lg border border-gray-300 hover:scale-110"
-            onClick={() => setBot(ybot)}
-            alt="YBOT"
-          />
-        </div>
-
-        <p className="text-lg font-semibold mt-4">
-          Animation Speed: {Math.round(speed * 100) / 100}
-        </p>
-        <Slider
-          axis="x"
-          xmin={0.05}
-          xmax={0.5}
-          xstep={0.01}
-          x={speed}
-          onChange={({ x }) => setSpeed(x)}
-          styles={sliderStyles}
-          className="w-full"
-        />
-
-        <p className="text-lg font-semibold mt-4">
-          Pause Time: {pause} ms
-        </p>
-        <Slider
-          axis="x"
-          xmin={0}
-          xmax={2000}
-          xstep={100}
-          x={pause}
-          onChange={({ x }) => setPause(x)}
-          styles={sliderStyles}
-          className="w-full"
-        />
-      </div>
-      
-      <div className="lg:flex-row space-y-4 flex flex-col items-center">
+    <div className="h-screen p-3">
+      <div className="lg:flex-row  flex flex-col items-center justify-around ">
         {/* Center Column */}
-        <div className="md:w-1/2 rounded-2xl ">
+        <div className="order-2  md:w-1/2 rounded-2xl  lg:order-1">
           <div
             id="canvas"
-            className="outline-[#4a5565] w-full max-w-[500px] h-62 sm:h-80 lg:h-[450px] outline-4  rounded-lg "> 
+            className="outline-[#4a5565] w-full max-w-[500px] h-64 sm:h-80 lg:h-[450px] outline-4  rounded-lg "
+          >
+            
           </div>
         </div>
 
         {/* Right Column */}
-        <div className="w-full lg:w-3/4 h-full lg:ml-5">{/* Speech Recognition Section */}
-          <div className="bg-gray-50 border h-1/2 border-gray-200 p-4 rounded shadow "> {/* Added background/padding for visual separation */}
-            <label className="block font-semibold mb-2 text-xl">
+        <div className=" bg-gray-50 border border-gray-200 order-1 lg:m-0 mb-5  max-w-300px max-h-[300px] lg:order-2 p-4 rounded-lg">
+          <p className="text-lg font-semibold mb-2">Select Avatar</p>
+          <div className="flex gap-x-2">
+            <img
+              src={xbotPic}
+              className="w-20 h-20 cursor-pointer rounded-lg border border-gray-300 hover:scale-110"
+              onClick={() => setBot(xbot)}
+              alt="XBOT"
+            />
+            <img
+              src={ybotPic}
+              className="w-20 h-20 cursor-pointer rounded-lg border border-gray-300 hover:scale-110"
+              onClick={() => setBot(ybot)}
+              alt="YBOT"
+            />
+          </div>
+
+          <p className="text-lg font-semibold mt-4">
+            Animation Speed: {Math.round(speed * 100) / 100}
+          </p>
+          <Slider
+            axis="x"
+            xmin={0.05}
+            xmax={0.5}
+            xstep={0.01}
+            x={speed}
+            onChange={({ x }) => setSpeed(x)}
+            styles={sliderStyles}
+            className="w-full"
+          />
+
+          <p className="text-lg font-semibold mt-4">
+            Pause Time: {pause} ms
+          </p>
+          <Slider
+            axis="x"
+            xmin={0}
+            xmax={2000}
+            xstep={100}
+            x={pause}
+            onChange={({ x }) => setPause(x)}
+            styles={sliderStyles}
+            className="w-full"
+          />
+        </div>
+      </div>
+
+        {/* Left Column */}
+      <div className="w-full mt-8  flex flex-col lg:flex-row gap-y-4 lg:space-x-6 p-4">
+
+        {/* Left Column: Contains Speech Recognition and Text Input */}
+        <div className="flex flex-col  space-y-4 lg:w-1/2"> {/* Added lg:w-1/2 */}
+
+          {/* Speech Recognition Section */}
+          <div className="bg-gray-50 border border-gray-200 p-4 rounded shadow"> {/* Added background/padding for visual separation */}
+            <label className="block font-semibold mb-4 text-xl">
               Speech Recognition:
               <span className={` ${listening ? 'text-green-500': 'text-red-500'}`}> {listening ? "on" : "off"}</span>
             </label>
-            <div className="flex flex-col sm:flex-row gap-3 justify-center md:space-x-6 "> {/* Adjusted button layout for smaller screens too */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center md:space-x-6 "> {/* Adjusted button layout for smaller screens too */}
               <button
                 className="bg-green-500 text-white transition-all text-lg font-medium rounded  py-2 px-4 cursor-pointer  flex-1" // Use flex-1 for better button sizing
                 onClick={() => SpeechRecognition.startListening({ continuous: true, language: 'en-US' })}
@@ -250,7 +258,7 @@ const ConvertSign = () => {
                 rows={4} // Adjusted rows slightly
                 value={transcript}
                 placeholder="Speech input..."
-                className="bg-gray-100 text-gray-800  w-full font-semibold p-1 border mt-2 rounded"
+                className="bg-gray-100 text-gray-800  w-full font-semibold p-2 border mt-2 rounded"
               />
               <button
                 onClick={() => sign(textFromAudio)}
@@ -261,96 +269,38 @@ const ConvertSign = () => {
             </div>
           </div>
 
-          {/* Right Column: Contains Processed Text */}
-          <div className="bg-gray-50 border w-full border-gray-200 mt-4 mb-4 p-4 rounded  text-[#cccccc] shadow"> {/* Added lg:w-1/2 and matching styling */}
-            <div className="w-full h-full flex flex-col"> {/* Make it flex column to push textarea down */}
-              <label className="font-semibold text-xl mb-2 text-black">Processed Text</label> {/* Added mb-2 */}
-              <textarea
-                readOnly
-                // rows={3} // Let flex grow handle height or set specific height 
-                value={text}
-                placeholder="Processed output..." // Added placeholder
-              className="bg-gray-100 text-gray-800  font-semibold w-full p-2 border rounded flex-grow" // Use flex-grow
-              />
-            </div>
-          </div>
-        </div>
-      </div> {/* upper row*/} 
-
-        {/* below row */}
-      <div className="w-full  flex flex-col justify-center lg:flex-row gap-y-4 lg:space-x-6">
-        {/* Left Column: Contains Speech Recognition and Text Input */}
-
-        <div className="hidden md:flex flex-col gap-3 mt-2 md:mt-0 sm:flex-row items-center justify-between lg:gap-6">
-          <div className=" bg-gray-50  border flex flex-col w-56 h-36 items-center border-gray-200  p-3 rounded-md">
-            <p className="text-lg font-semibold mb-1">Select Avatar</p>
-            <div className="flex  gap-x-6">
-              <img
-                src={xbotPic}
-                className="w-20 h-20 cursor-pointer rounded-lg border border-gray-300 hover:scale-110"
-                onClick={() => setBot(xbot)}
-                alt="XBOT"
-              />
-              <img
-                src={ybotPic}
-                className="w-20 h-20 cursor-pointer rounded-lg border border-gray-300 hover:scale-110"
-                onClick={() => setBot(ybot)}
-                alt="YBOT"
-              />
-            </div>
-          </div>
-
-          <div className="bg-gray-50 w-56 h-36 p-3 rounded-md">
-            <p className="text-lg font-semibold ">
-              Animation Speed: {Math.round(speed * 100) / 100}
-            </p>
-            <Slider
-              axis="x"
-              xmin={0.05}
-              xmax={0.5}
-              xstep={0.01}
-              x={speed}
-              onChange={({ x }) => setSpeed(x)}
-              styles={sliderStyles}
-              className="w-full"
-            />
-
-            <p className="text-lg font-semibold mt-4">
-              Pause Time: {pause} ms
-            </p>
-            <Slider
-              axis="x"
-              xmin={0}
-              xmax={2000}
-              xstep={100}
-              x={pause}
-              onChange={({ x }) => setPause(x)}
-              styles={sliderStyles}
-              className="w-full"
-            />
-          </div>
-        </div>
-        
-        
-
-        <div className="flex flex-col items-center justify-center w-full"> {/* Added lg:w-1/2 */}
           {/* Text Input Section */}
-          <div className=" bg-gray-50 border h-3/4 w-full border-gray-200 p-3 rounded shadow text-[#cccccc] "> {/* Added background/padding for visual separation */}
-            <label className="block font-semibold text-xl  text-black ">Text Input</label> {/* Added mb-2 */}
-            <div className="flex flex-col lg:flex-row mt-1 h-full gap-3 items-center justify-between lg:pb-6">
-                <textarea
-                  ref={textFromInput}
-                  rows={4} // Adjusted rows slightly
-                  placeholder="Text input..."
-                  className=" bg-gray-100 text-gray-800 w-full h-3/4 font-semibold p-2 border  rounded"
-                />
-                <button
-                  onClick={() => sign(textFromInput)}
-                  className="bg-green-500 text-white active:translate-y-1 ease-in-out  text-lg text-nowrap   transition-all py-2 px-2 font-semibold  rounded cursor-pointer" // Added padding
-                >
-                  Start Animations
-                </button>              
+          <div className="bg-gray-50 border border-gray-200 p-4 rounded shadow text-[#cccccc] "> {/* Added background/padding for visual separation */}
+            <label className="block font-semibold text-xl mb-2 text-black ">Text Input</label> {/* Added mb-2 */}
+            <div className="flex flex-col items-center">
+              <textarea
+                ref={textFromInput}
+                rows={4} // Adjusted rows slightly
+                placeholder="Text input..."
+                className=" bg-gray-100 text-gray-800 w-full font-semibold p-2 border mt-2 rounded"
+              />
+              <button
+                onClick={() => sign(textFromInput)}
+                className="bg-green-500 text-white active:translate-y-1 ease-in-out w-max mt-4 text-lg  transition-all  font-semibold py-2 px-4 rounded cursor-pointer" // Added padding
+              >
+                Start Animations
+              </button>
             </div>
+          </div>
+
+        </div>
+
+        {/* Right Column: Contains Processed Text */}
+        <div className="bg-gray-50 border border-gray-200  lg:w-1/2 p-4 rounded  text-[#cccccc] shadow"> {/* Added lg:w-1/2 and matching styling */}
+          <div className="w-full h-full flex flex-col"> {/* Make it flex column to push textarea down */}
+            <label className="font-semibold text-xl mb-2 text-black">Processed Text</label> {/* Added mb-2 */}
+            <textarea
+              readOnly
+              // rows={3} // Let flex grow handle height or set specific height 
+              value={text}
+              placeholder="Processed output..." // Added placeholder
+            className="bg-gray-100 text-gray-800  font-semibold w-full p-2 border rounded flex-grow" // Use flex-grow
+            />
           </div>
         </div>
       </div> 
