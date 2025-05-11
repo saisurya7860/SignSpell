@@ -14,7 +14,6 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 import Slider from 'react-input-slider';
-import Navbar from "../Components/Navbar";
 
 
 const ConvertSign = () => {
