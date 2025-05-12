@@ -112,7 +112,7 @@ const Register = () => {
                 <button onClick={(e) => handleLogin(e)} type="submit" className='bg-green-500 text-white py-2 px-4 rounded-md cursor-pointer'>Login</button>
             </form>
             <div className='mt-4'>
-                Already have an account? <span href="/login"  onClick={() => setLoginPage(!loginPage)}  className='text-green-500 cursor-pointer'>Register</span>
+                Don't have an account? <span href="/login"  onClick={() => setLoginPage(!loginPage)}  className='text-green-500 cursor-pointer'>Register</span>
             </div>
 
            

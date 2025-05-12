@@ -22,7 +22,7 @@ const Navbar = () => {
     const navSidebarData = {   
         routesPath:['/','/learnsign','/convertsign','/docs','/setting'],
         routesName:['Dashboard','Learn Sign','Convert','Docs','Settings'],
-        icons:[FaChartBar,FaSignLanguage,FaExchangeAlt,FaFileAlt,FaCameraRetro,FaCog]
+        icons:[FaChartBar,FaSignLanguage,FaExchangeAlt,FaFileAlt,FaCog]
     }
     const [openProfile,setOpenProfile] = useState(false);
     // Drakmode setting

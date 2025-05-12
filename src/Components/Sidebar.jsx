@@ -10,7 +10,7 @@ const Sidebar = () => {
     const sidebarData = {   
         routesPath:['/','/learnsign','/convertsign','/docs','/setting',],
         routesName:['Dashboard','Learn Sign','Convert','Docs','Settings',],
-        icons:[FaChartBar,FaSignLanguage,FaExchangeAlt,FaFileAlt,FaCameraRetro,FaCog,]
+        icons:[FaChartBar,FaSignLanguage,FaExchangeAlt,FaFileAlt,FaCog,]
     }
     // const {logout} = userAuth();
     //     const handleLogOut =()=>{

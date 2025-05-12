@@ -18,9 +18,9 @@ const Home = () => {
           <p className="text-lg mb-6">
            Sign Spell is an AI-powered system that translates spoken language into Indian Sign Language (ISL) in real time using animated 3D avatars. It’s designed to bridge the communication gap for the hearing and speech impaired, especially in public and government events where accessibility matters most.
           </p>
-          <button className="px-6 py-3 cursor-pointer bg-green-500 text-white rounded-md w-max">
+          <a href="http://localhost:3000"><button className="px-6 py-3 cursor-pointer bg-green-500 text-white rounded-md w-max">
             Get Started
-          </button>
+          </button></a>
         </div>
 
         {/* Right 3D Canvas */}
